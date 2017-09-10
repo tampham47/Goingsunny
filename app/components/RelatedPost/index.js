@@ -9,7 +9,9 @@ import styles from './styles.css';
 class RelatedPost extends Component {
   render() {
     return (
-      <section className={styles.main}>Related Post</section>
+      <section className={styles.main}>
+        <h5>Related Post</h5>
+      </section>
     )
   }
 }

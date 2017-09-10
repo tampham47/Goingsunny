@@ -1,1 +1,12 @@
 .main {}
+
+.user-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.user-item {
+  width: 25%;
+  margin-bottom: 1rem;
+}

@@ -9,7 +9,9 @@ import styles from './styles.css';
 class Payment extends Component {
   render() {
     return (
-      <section className={styles.main}>Payment</section>
+      <section className={styles.main}>
+        <h5>Payment</h5>
+      </section>
     )
   }
 }
