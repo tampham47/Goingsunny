@@ -9,18 +9,19 @@ import Header from 'components/Header';
 class App extends Component {
   render() {
     return (
-      <div className={styles.main}>
+      <main>
         <Helmet
-          defaultTitle="Redux real-world example"
-          titleTemplate="%s - Redux real-world example"
-          meta={[
-            {"name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express"},
-          ]}
+          defaultTitle="Goingsunny"
+          titleTemplate="%s - Goingsunny"
+          meta={[{
+            "name": "description", 
+            "content": "The biggest online English club in Vietnam!!!"
+          },]}
           htmlAttributes={{"lang": "en"}}
         />
         <Header />
         {this.props.children}
-      </div>
+      </main>
     )
   }
 }

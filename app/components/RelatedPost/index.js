@@ -9,7 +9,7 @@ import styles from './styles.scss';
 class RelatedPost extends Component {
   render() {
     return (
-      <div className={styles.main}>Related Post</div>
+      <section className={styles.main}>Related Post</section>
     )
   }
 }

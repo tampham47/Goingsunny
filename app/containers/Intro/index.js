@@ -17,10 +17,12 @@ class Intro extends Component {
       <div className={styles.main}>
         <Helmet title="Intro" />
 
-        <Timer />
-        <UserList />
-        <RelatedPost />
-        <Payment />
+        <div className="container">
+          <Timer />
+          <UserList />
+          <RelatedPost />
+          <Payment />
+        </div>
       </div>
     )
   }

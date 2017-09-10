@@ -9,7 +9,9 @@ import styles from './styles.scss';
 class Timer extends Component {
   render() {
     return (
-      <div className={styles.main}>Timer</div>
+      <section className={styles.main}>
+        <button className="button-primary">Join next session</button>
+      </section>
     )
   }
 }

@@ -9,7 +9,7 @@ import styles from './styles.scss';
 class Payment extends Component {
   render() {
     return (
-      <div className={styles.main}>Payment</div>
+      <section className={styles.main}>Payment</section>
     )
   }
 }

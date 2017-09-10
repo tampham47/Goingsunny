@@ -9,7 +9,7 @@ import styles from './styles.scss';
 class UserList extends Component {
   render() {
     return (
-      <div className={styles.main}>User List</div>
+      <section className={styles.main}>User List</section>
     )
   }
 }
