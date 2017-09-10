@@ -20,7 +20,6 @@ class Intro extends Component {
         <div className="container">
           <Timer />
           <UserList />
-          <RelatedPost />
           <Payment />
         </div>
       </div>
