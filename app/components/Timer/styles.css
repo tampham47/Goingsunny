@@ -1,0 +1,10 @@
+.main {
+  text-align: center;
+}
+
+.quote {
+  margin: 1rem 0;
+}
+.quote p {
+  margin-bottom: 0; 
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
-import styles from './styles.scss';
+import styles from './styles.css';
 
 
 class UserList extends Component {
