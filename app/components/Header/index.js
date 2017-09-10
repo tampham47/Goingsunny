@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
+import User from './User';
+
 import styles from './styles.css';
 
 
@@ -33,7 +35,9 @@ class Intro extends Component {
     return (
       <header className={styles.main}>
         <div className="container">
-          <div className={styles.left}>Left</div>
+          <div className={styles.left}>
+            <User />
+          </div>
           <div className={styles.right}>Right</div>
           <div className={styles.center}>
             <div className={this.getAnimatedClass('tada')}>GOING SUNNY</div>

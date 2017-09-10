@@ -27,7 +27,9 @@ button {
   margin-bottom: 0;
 }
 
-main {}
+main {
+  padding-top: var(--header);
+}
 
 section {
   margin: 4rem 0;

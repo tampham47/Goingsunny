@@ -1,0 +1,26 @@
+.main {
+  line-height: var(--header);
+  display: flex;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.main:hover {
+  background-color: var(--color2);
+  color: white;
+}
+
+.avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 8px 0;
+  margin-right: 4px;
+}
+
+.avatar img {
+  width: 100%;
+}
