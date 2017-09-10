@@ -12,7 +12,9 @@ class Timer extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <CountDown date={`2017-12-24T00:00:00`}/>
+        <div className={styles.timer}>
+          <CountDown date={`2017-12-24T00:00:00`}/>
+        </div>
         <button className="button-primary">Join next session</button>
         <div className={styles.quote}>
           <p>You don't have to be great to start</p>
