@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
-import Helmet from 'react-helmet'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import Helmet from 'react-helmet';
+import moment from 'moment';
 
 import CountDown from 'components/CountDown';
 
@@ -10,10 +11,12 @@ import styles from './styles.css';
 
 class Timer extends Component {
   render() {
+    const today = moment().add('hours', 1);
+
     return (
       <section className={styles.main}>
         <div className={styles.timer}>
-          <CountDown date={`2017-12-24T00:00:00`}/>
+          <CountDown date={today.toDate()} hideDays />
         </div>
         <button className="button-primary">Join next session</button>
         <div className={styles.quote}>

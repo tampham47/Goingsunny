@@ -7,7 +7,7 @@ class Countdown extends Component {
 
     this.state = {
       days: 0,
-      hours: 8,
+      hours: 0,
       min: 0,
       sec: 0,
     }
@@ -79,12 +79,14 @@ class Countdown extends Component {
 
     return (
       <div className={styles.main}>
+        {!this.props.hideDays && (
         <span className={styles.col}>
           <span className={styles.item}>
             <strong>{this.addLeadingZeros(countDown.days)}</strong>
             <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
           </span>
         </span>
+        )}
 
         <span className={styles.col}>
           <span className={styles.item}>
@@ -112,7 +114,8 @@ class Countdown extends Component {
 }
 
 Countdown.propTypes = {
-  date: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired,
+  hideDays: PropTypes.bool,
 };
 
 Countdown.defaultProps = {
