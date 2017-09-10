@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
+import Payment from 'components/Payment';
+import RelatedPost from 'components/RelatedPost';
+import Timer from 'components/Timer';
+import UserList from 'components/UserList';
+
 import styles from './styles.css';
 
 
@@ -11,11 +16,11 @@ class Intro extends Component {
     return (
       <div className={styles.main}>
         <Helmet title="Intro" />
-        <h1 className={styles.title}>Intro Page</h1>
-        <div>
-          <img src="/assets/images/head.png"/>
-        </div>
-        <Link to="/main">to main</Link>
+
+        <Timer />
+        <UserList />
+        <RelatedPost />
+        <Payment />
       </div>
     )
   }

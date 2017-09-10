@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 import styles from './app.css';
 
+import Header from 'components/Header';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           ]}
           htmlAttributes={{"lang": "en"}}
         />
+        <Header />
         {this.props.children}
       </div>
     )

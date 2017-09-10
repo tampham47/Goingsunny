@@ -1,7 +1,26 @@
+/* http://colorhunt.co/c/72112 */
 :root {
-  --main-color: #F06D06;
+  --color1: #D3D6DB;
+  --color2: #3A4750;
+  --color3: #303841;
+  --color4: #BE3144;
+
+  --header: 46px;
 }
 
-.main {
-  background-color: var(--main-color);
+/* 1rem = 10px */
+html {
+  font-size: 62.5%;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.main {}

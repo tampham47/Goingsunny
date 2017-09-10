@@ -42,7 +42,7 @@ var config = {
         include: __dirname
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           'style-loader',
           {
