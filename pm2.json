@@ -1,0 +1,36 @@
+{
+  "apps": [
+    {
+      "exec_mode": "fork_mode",
+      "name": "goingsunny2.0",
+      "script": "server",
+      "watch": false,
+      "ignore_watch": [
+        "node_modules",
+        "log"
+      ],
+      "watch_options": {
+        "followSymlinks": false
+      },
+      "env": {
+        "NODE_ENV": "production",
+        "LOG": 1,
+        "PORT": 4747,
+        "NODE_PATH": "./app",
+        "HOST_PATH": "dev.goingsunny.com"
+      },
+      "env_production": {
+        "NODE_ENV": "production",
+        "PORT": 4747,
+        "NODE_PATH": "./app",
+        "HOST_PATH": "goingsunny.com"
+      },
+      "env_staging": {
+        "NODE_ENV": "staging",
+        "PORT": 4747,
+        "NODE_PATH": "./app",
+        "HOST_PATH": "stag.goingsunny.com"
+      }
+    }
+  ]
+}

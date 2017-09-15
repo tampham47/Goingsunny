@@ -11,9 +11,9 @@ class UserList extends Component {
       <section className={styles.main}>
         <h5>User List</h5>
         <div className={styles.userList}>
-          {[1,2,3,4,5,6,7,8,9,10].map(function(i) {
+          {[1,2,3,4,5,6,7,8,9,10].map(function(i, index) {
             return (
-              <div className={styles.userItem}>
+              <div key={index} className={styles.userItem}>
                 <User />
               </div>
             )
