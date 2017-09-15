@@ -9,7 +9,7 @@ let port = process.env.PORT || 3000
 server.use(compression())
 
 if (process.env.NODE_ENV === 'production') {
-  server.use(Express.static(path.join(__dirname, '..', 'public')))
+  server.use(Express.static(path.join(__dirname, '..', 'dist/public')))
 } else {
   server.use('/assets', Express.static(path.join(__dirname, '..', 'app/assets')))
   server.use(Express.static(path.join(__dirname, '..', 'dist')))
