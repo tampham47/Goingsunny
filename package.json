@@ -11,11 +11,10 @@
     "test": "./bin/test",
     "test:ci": "yarn run test:prebuild; yarn test",
     "webpack": "webpack",
-    "build": "rimraf dist/ && npm run webpack && gulp build",
+d    "build": "rimraf dist/ && npm run webpack && gulp build",
 
     "login": "ssh -i _deploy/goingsunny-oregon.pem centos@35.162.241.129",
     "deploy": "ssh -t -i _deploy/goingsunny-oregon.pem centos@35.162.241.129 'cd prod/goingsunny2.0 && git pull && yarn run build && pm2 startOrRestart pm2.json --env production'",
-
     "postinstall": "npm run build"
   },
   "engines": {
@@ -58,6 +57,7 @@
     "immutable": "^3.8.1",
     "lodash": "^3.10.1",
     "moment": "^2.18.1",
+    "mqtt": "^2.13.0",
     "node-sass": "^3.4.2",
     "normalizr": "^1.0.0",
     "postcss-loader": "^2.0.6",
