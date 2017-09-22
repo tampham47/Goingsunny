@@ -23,7 +23,12 @@ class App extends Component {
       try { message = JSON.parse(mess.toString()); }
       catch (err) {}
 
-      console.log('message', topic, message);
+      window.dispatchEvent(new CustomEvent('goingsunny', {
+        detail: {
+          topic: topic,
+          message: message,
+        }
+      }));
     });
   }
 
