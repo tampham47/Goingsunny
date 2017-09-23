@@ -11,6 +11,7 @@ class Payment extends Component {
     return (
       <section className={styles.main}>
         <h5>Payment</h5>
+        <p>Consectetur consectetur elit ex magna. Aute cupidatat qui adipisicing nulla qui. Duis consectetur irure consectetur laborum consectetur ut ad nostrud eiusmod non.</p>
       </section>
     )
   }
