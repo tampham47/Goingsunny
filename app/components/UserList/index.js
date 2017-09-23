@@ -17,7 +17,6 @@ class UserList extends Component {
 
   componentDidMount() {
     window.addEventListener('goingsunny', function(e) {
-      console.log('goingsunny', e.detail);
       this.setState({
         clients: e.detail.message.clients
       });
