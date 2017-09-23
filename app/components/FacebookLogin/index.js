@@ -25,15 +25,30 @@ class ReactComp extends Component {
   }
 
   responseFacebook(res) {
-    console.log('responseFacebook', res);
-    this.setState({
-      name: res.name,
-    });
-
-    // AppStorage.setProps({
-    //   accessToken: res.accessToken
+    // console.log('responseFacebook', res);
+    // this.setState({
+    //   name: res.name,
     // });
-    // this.props.dispatch(loadProfileByToken({ accessToken: res.accessToken }));
+
+    fetch(`/auth/facebook/token?access_token=${res.accessToken}`, {
+      method: 'GET',
+    })
+    .then(response => {
+      // response.status     //=> number 100–599
+      // response.statusText //=> String
+      // response.headers    //=> Headers
+      // response.url        //=> String
+      return response.json();
+    })
+    .then(body => {
+      console.log('profile', body);
+      this.setState({
+        name: body.displayName + ' ' + body.username,
+      });
+    })
+    .catch(err => {
+      console.log('err', err);
+    });
   }
 
   render() {

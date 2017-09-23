@@ -1,12 +1,14 @@
-import Express from 'express'
-import path from 'path'
-import compression from 'compression'
-import clearRequireCacheOnChange from './lib/clearRequireCacheOnChange'
+import Express from 'express';
+import path from 'path';
+import compression from 'compression';
+import clearRequireCacheOnChange from './lib/clearRequireCacheOnChange';
+import passportFacebook from './middlewares/facebook';
 
-let server = new Express()
-let port = process.env.PORT || 3000
 
-server.use(compression())
+let server = new Express();
+let port = process.env.PORT || 3000;
+
+server.use(compression());
 
 if (process.env.NODE_ENV === 'production') {
   server.use(Express.static(path.join(__dirname, '..', 'dist/public')))
@@ -37,17 +39,20 @@ if (process.env.NODE_ENV === 'production') {
   clearRequireCacheOnChange({ rootDir: path.join(__dirname, '..') })
 }
 
-server.set('views', path.join(__dirname, 'views'))
-server.set('view engine', 'ejs')
+server.set('views', path.join(__dirname, 'views'));
+server.set('view engine', 'ejs');
 
-server.get('*', (req, res, next)=> {
-  require('./middlewares/universalRenderer').default(req, res, next)
-})
+// init passport by passing the instance of express
+passportFacebook(server);
+
+server.get('*', (req, res, next) => {
+  require('./middlewares/universalRenderer').default(req, res, next);
+});
 server.use((err, req, res, next)=> {
-  console.log(err.stack)
+  console.log(err.stack);
   // TODO report error here or do some further handlings
-  res.status(500).send("something went wrong...")
-})
+  res.status(500).send("something went wrong...");
+});
 
-console.log(`Server is listening to port: ${port}`)
-server.listen(port)
+console.log(`Server is listening to port: ${port}`);
+server.listen(port);
