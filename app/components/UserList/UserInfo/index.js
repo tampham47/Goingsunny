@@ -7,10 +7,12 @@ import styles from './styles.css';
 
 class User extends Component {
   render() {
+    const user = {};
+    
     return (
       <span className={styles.main}>
         <span className={styles.avatar}>
-          <img src='https://avatars.io/facebook/wikiblack' alt=''/>
+          <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
         </span>
         <span className={styles.content}>
           <span>Tam Pham</span>
