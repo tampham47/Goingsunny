@@ -4,9 +4,7 @@
  */
 
 import passport from 'passport';
-// import { Strategy } from 'passport-facebook';
 import superAgent from 'superagent';
-// import config from 'config';
 import uuid from 'uuid';
 import _ from 'lodash';
 import FacebookTokenStrategy from 'passport-facebook-token';
