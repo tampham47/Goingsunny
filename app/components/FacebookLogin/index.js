@@ -11,6 +11,8 @@ class ReactComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoggedIn: false,
+      profile: null,
       name: '',
     };
 
@@ -25,11 +27,6 @@ class ReactComp extends Component {
   }
 
   responseFacebook(res) {
-    // console.log('responseFacebook', res);
-    // this.setState({
-    //   name: res.name,
-    // });
-
     fetch(`/auth/facebook/token?access_token=${res.accessToken}`, {
       method: 'GET',
     })
@@ -43,7 +40,8 @@ class ReactComp extends Component {
     .then(body => {
       console.log('profile', body);
       this.setState({
-        name: body.displayName + ' ' + body.username,
+        isLoggedIn: true,
+        profile: body,
       });
     })
     .catch(err => {
@@ -54,14 +52,17 @@ class ReactComp extends Component {
   render() {
     return (
       <div>
-        <FacebookLogin 
-          cssClass="button button-primary facebook"
-          appId="1391679424181926" 
-          fields="name,email,picture"
-          autoLoad={true} 
-          scope="public_profile"
-          callback={this.responseFacebook} />
-        <p>{this.state.name}</p>
+        {this.state.isLoggedIn ? (
+          <p>{this.state.profile.displayName}</p>
+        ) : (
+          <FacebookLogin 
+            cssClass="button button-primary facebook"
+            appId="1391679424181926" 
+            fields="name,email,picture"
+            autoLoad={true} 
+            scope="public_profile"
+            callback={this.responseFacebook} />
+        )}
       </div>
     )
   }

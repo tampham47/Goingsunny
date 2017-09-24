@@ -21,7 +21,7 @@ class Intro extends Component {
         <div className="container">
           <Timer />
           <UserList />
-          <FacebookLogin />
+          {/* <FacebookLogin /> */}
           <Payment />
         </div>
       </div>
