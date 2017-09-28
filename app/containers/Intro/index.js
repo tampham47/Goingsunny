@@ -8,6 +8,7 @@ import RelatedPost from 'components/RelatedPost';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
 import FacebookLogin from 'components/FacebookLogin';
+import PinnedDocumentList from 'components/PinnedDocumentList';
 
 import styles from './styles.css';
 
@@ -19,6 +20,7 @@ class Intro extends Component {
         <Helmet title="Intro" />
 
         <div className="container">
+          <PinnedDocumentList/>
           <Timer />
           <UserList />
           {/* <FacebookLogin /> */}
