@@ -20,10 +20,9 @@ class Intro extends Component {
         <Helmet title="Intro" />
 
         <div className="container">
-          <PinnedDocumentList/>
           <Timer />
           <UserList />
-          {/* <FacebookLogin /> */}
+          <PinnedDocumentList/>
           <Payment />
         </div>
       </div>
