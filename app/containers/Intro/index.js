@@ -24,9 +24,9 @@ class Intro extends Component {
     .then(response => { return response.json(); });
   }
 
-  static fetchData({ store, params, history }) {
-    return Intro.initial();
-  }
+  // static fetchData({ store, params, history }) {
+  //   return Intro.initial();
+  // }
 
   constructor(props) {
     super(props);
