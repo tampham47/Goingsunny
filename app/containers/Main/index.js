@@ -1,12 +1,45 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
-import Helmet from 'react-helmet'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import Helmet from 'react-helmet';
+import config from 'config';
 
+import moment from 'moment';
 import styles from './styles.css';
 
 
 class Intro extends Component {
+  static initial() {
+    const sessionName = moment().format('YYYYMMDD');
+    return fetch(`${config.API_BASE_URL}/sesion?query={sessionName:${sessionName}}`, {
+      method: 'GET'
+    })
+    .then(response => { return response.json(); });
+  }
+
+  // static fetchData({ store, params, history }) {
+  //   let { id } = params;
+  //   return Intro.initial();
+  // }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      busy: false,
+      joinedUsers: [],
+    }
+  }
+
+  componentDidMount() {
+    Intro.initial().then(body => {
+      console.log('joinedUsers', body);
+      this.setState({ joinedUsers: body });
+    })
+    .catch(err => {
+      this.setState({ err });
+    });
+  }
+
   render() {
     return (
       <div className={styles.main}>
