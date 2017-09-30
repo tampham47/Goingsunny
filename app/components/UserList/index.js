@@ -25,6 +25,12 @@ class UserList extends Component {
     }.bind(this));
   }
 
+  componentWillReceiveProps(next) {
+    this.setState({
+      users: next.model,
+    })
+  }
+
   render() {
     return (
       <section className={styles.main}>
