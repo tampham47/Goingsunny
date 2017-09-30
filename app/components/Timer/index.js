@@ -11,13 +11,27 @@ import styles from './styles.css';
 
 class Timer extends Component {
   render() {
-    const today = moment().add('hours', 1);
+    let showTimer = false;
+    const today = moment().utcOffset(7);
+
+    if (today.get('hour') < 20) {
+      today.set({ hour: 20, minute: 0, second: 0, millisecond: 0 });
+      showTimer = true;
+    }
 
     return (
       <section className={styles.main}>
+        {showTimer ? (
         <div className={styles.timer}>
-          <CountDown date={today.toDate()} hideDays />
+          <CountDown date={today.toDate().toDateString()} hideDays />
         </div>
+        ) : (
+        <p>
+          Are you ready, the party time is started, you are not too late.
+          Just click on below button and wait maximun to 2 mins.
+          The system will lead you to another one to talk.
+        </p>
+        )}
         <button className="button-primary">Join next session</button>
         <div className={styles.quote}>
           <p>You don't have to be great to start</p>

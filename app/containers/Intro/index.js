@@ -18,7 +18,11 @@ class Intro extends Component {
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
     const url = 'http://api.goingsunny.com/api/v1';
-    return fetch(`${url}/session?populate=_user&query={"sessionName":"${sessionName}"}`, {
+    const query = JSON.stringify({
+      sessionName,
+      roomName: '',
+    });
+    return fetch(`${url}/session?populate=_user&query=${query}`, {
       method: 'GET'
     })
     .then(response => { return response.json(); })
@@ -26,10 +30,6 @@ class Intro extends Component {
       return models.map(i => i._user);
     });
   }
-
-  // static fetchData({ store, params, history }) {
-  //   return Intro.initial();
-  // }
 
   constructor(props) {
     super(props);
@@ -41,7 +41,6 @@ class Intro extends Component {
 
   componentDidMount() {
     Intro.initial().then(body => {
-      console.log('body', body);
       this.setState({ joinedUsers: body });
     })
     .catch(err => {
@@ -52,7 +51,7 @@ class Intro extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="The New World" />
+        <Helmet title="A first online English club in Vietnam" />
 
         <div className="container">
           <Timer />
