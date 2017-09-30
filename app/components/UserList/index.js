@@ -12,7 +12,7 @@ class UserList extends Component {
 
     this.state = {
       clients: [],
-      users: [],
+      users: props.model || [],
     }
   }
 
