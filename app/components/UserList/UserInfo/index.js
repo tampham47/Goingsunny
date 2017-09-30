@@ -5,23 +5,20 @@ import Helmet from 'react-helmet';
 import styles from './styles.css';
 
 
-class User extends Component {
-  render() {
-    const user = this.props.model;
-    
-    return (
-      <span className={styles.main}>
-        <span className={styles.avatar}>
-          <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
-        </span>
-        <span className={styles.content}>
-          <span>{user.displayName}</span>
-          <span>✡✡✡</span>
-        </span>
+const UserInfo = (props) => {
+  const user = props.model;
+
+  return (
+    <span className={styles.main}>
+      <span className={styles.avatar}>
+        <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
       </span>
-    )
-  }
+      <span className={styles.content}>
+        <span>{user.displayName}</span>
+        <span>✡✡✡</span>
+      </span>
+    </span>
+  );
 }
 
-
-export default User;
+export default UserInfo;
