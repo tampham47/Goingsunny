@@ -7,7 +7,6 @@ import Payment from 'components/Payment';
 import RelatedPost from 'components/RelatedPost';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
-import FacebookLogin from 'components/FacebookLogin';
 
 import styles from './styles.css';
 
@@ -21,7 +20,6 @@ class Intro extends Component {
         <div className="container">
           <Timer />
           <UserList />
-          {/* <FacebookLogin /> */}
           <Payment />
         </div>
       </div>

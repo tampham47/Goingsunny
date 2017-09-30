@@ -12,15 +12,24 @@ class UserList extends Component {
 
     this.state = {
       clients: [],
+      users: [],
     }
   }
 
   componentDidMount() {
-    window.addEventListener('goingsunny', function(e) {
-      console.log('goingsunny', e.detail);
+    window.addEventListener('goingsunny_system_meeting', function(e) {
+      console.log('goingsunny_system_meeting', e.detail.clients);
       this.setState({
-        clients: e.detail.message.clients
+        clients: e.detail.clients
       });
+    }.bind(this));
+    
+    // this will fired when people join the class
+    window.addEventListener('SYSTEM_CLASS_DATA', function(e) {
+      console.log('SYSTEM_CLASS_DATA', e.detail);
+      const users = this.state.users;
+      users.push(e.detail);
+      this.setState({ users });
     }.bind(this));
   }
 
@@ -29,10 +38,10 @@ class UserList extends Component {
       <section className={styles.main}>
         <h5>User List</h5>
         <div className={styles.userList}>
-          {this.state.clients.map(function(i, index) {
+          {this.state.users.map(function(item, index) {
             return (
               <div key={index} className={styles.userItem}>
-                <User />
+                <User model={item}/>
               </div>
             )
           })}

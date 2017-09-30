@@ -7,7 +7,7 @@ import styles from './styles.css';
 
 class User extends Component {
   render() {
-    const user = {};
+    const user = this.props.model;
     
     return (
       <span className={styles.main}>
@@ -15,7 +15,7 @@ class User extends Component {
           <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
         </span>
         <span className={styles.content}>
-          <span>Tam Pham</span>
+          <span>{user.displayName}</span>
           <span>✡✡✡</span>
         </span>
       </span>
