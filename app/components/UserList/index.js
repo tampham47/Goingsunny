@@ -11,7 +11,6 @@ class UserList extends Component {
     super(props);
 
     this.state = {
-      clients: [],
       users: props.model || [],
     }
   }

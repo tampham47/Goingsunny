@@ -18,17 +18,15 @@ class Intro extends Component {
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
     const url = 'http://api.goingsunny.com/api/v1';
-    console.log('intro', sessionName);
     return fetch(`${url}/session?query={"sessionName":"${sessionName}"}`, {
       method: 'GET'
     })
     .then(response => { return response.json(); });
   }
 
-  // static fetchData({ store, params, history }) {
-  //   let { id } = params;
-  //   return Intro.initial();
-  // }
+  static fetchData({ store, params, history }) {
+    return Intro.initial();
+  }
 
   constructor(props) {
     super(props);
@@ -40,11 +38,9 @@ class Intro extends Component {
 
   componentDidMount() {
     Intro.initial().then(body => {
-      console.log('intro body', body);
       this.setState({ joinedUsers: body });
     })
     .catch(err => {
-      console.log('intro err', body);
       this.setState({ err });
     });
   }
