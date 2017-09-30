@@ -11,6 +11,7 @@ class App extends Component {
   componentDidMount() {
     mqtt.on('connect', () => {
       mqtt.subscribe('goingsunny_system_meeting');
+      mqtt.subscribe('SYSTEM_CLASS_DATA');
       console.log('goingsunny_system_meeting');
     });
 
@@ -23,11 +24,8 @@ class App extends Component {
       try { message = JSON.parse(mess.toString()); }
       catch (err) {}
 
-      window.dispatchEvent(new CustomEvent('goingsunny', {
-        detail: {
-          topic: topic,
-          message: message,
-        }
+      window.dispatchEvent(new CustomEvent(topic, {
+        detail: message,
       }));
     });
   }

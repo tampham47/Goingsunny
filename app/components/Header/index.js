@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
-import FacebookLogin from 'react-facebook-login';
+import mqtt from 'middleware/mqtt';
+import moment from 'moment';
 
+import FacebookLogin from 'react-facebook-login';
 import User from './User';
 import styles from './styles.css';
 
@@ -25,7 +27,7 @@ class Intro extends Component {
   componentDidMount() {
     this.setState({
       isAnimate: true
-    })
+    });
   }
   
   getAnimatedClass(name) {
@@ -44,6 +46,13 @@ class Intro extends Component {
     })
     .then(response => { return response.json(); })
     .then(body => {
+      const payload = {
+        user: body,
+        session: moment().format('YYYYMMDD'),
+      };
+      console.log('payload', payload);
+      mqtt.publish('join-class', JSON.stringify(payload));
+
       this.setState({
         busy: false,
         isLoggedIn: true,
