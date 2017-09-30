@@ -17,13 +17,6 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('goingsunny_system_meeting', function(e) {
-      console.log('goingsunny_system_meeting', e.detail.clients);
-      this.setState({
-        clients: e.detail.clients
-      });
-    }.bind(this));
-    
     // this will fired when people join the class
     window.addEventListener('SYSTEM_CLASS_DATA', function(e) {
       console.log('SYSTEM_CLASS_DATA', e.detail);
