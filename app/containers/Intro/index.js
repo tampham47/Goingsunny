@@ -15,7 +15,7 @@ class Intro extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="Intro" />
+        <Helmet title="The New World" />
 
         <div className="container">
           <Timer />
