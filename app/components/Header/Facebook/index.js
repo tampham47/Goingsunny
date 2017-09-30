@@ -13,6 +13,7 @@ const Facebook = (props) => {
       fields="name,email,picture"
       scope="public_profile"
       autoLoad={true} 
+      textButton={props.textButton || 'Login With Facebook'}
       callback={props.callback} 
     />
   );

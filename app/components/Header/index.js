@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import mqtt from 'middleware/mqtt';
 import moment from 'moment';
 
-import FacebookLogin from './Facebook';
+import Facebook from './Facebook';
 import User from './User';
 import styles from './styles.css';
 
@@ -50,7 +50,6 @@ class Intro extends Component {
         user: body,
         session: moment().format('YYYYMMDD'),
       };
-      console.log('payload', payload);
       mqtt.publish('join-class', JSON.stringify(payload));
 
       this.setState({
@@ -68,6 +67,8 @@ class Intro extends Component {
   }
 
   render() {
+    const fbText = this.state.busy ? 'Loading...' : '';
+
     return (
       <header className={styles.main}>
         <div className="container">
@@ -75,7 +76,7 @@ class Intro extends Component {
             {this.state.isLoggedIn ? (
               <User model={this.state.profile} />
             ) : (
-              <FacebookLogin callback={this.responseFacebook} />
+              <Facebook callback={this.responseFacebook} textButton={fbText} />
             )}
           </div>
           <div className={styles.right}>Right</div>
