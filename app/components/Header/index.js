@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import mqtt from 'middleware/mqtt';
 import moment from 'moment';
 
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from './Facebook';
 import User from './User';
 import styles from './styles.css';
 
@@ -75,13 +75,7 @@ class Intro extends Component {
             {this.state.isLoggedIn ? (
               <User model={this.state.profile} />
             ) : (
-              <FacebookLogin 
-                cssClass="button button-primary facebook"
-                appId="1391679424181926" 
-                fields="name,email,picture"
-                autoLoad={true} 
-                scope="public_profile"
-                callback={this.responseFacebook} />
+              <FacebookLogin callback={this.responseFacebook} />
             )}
           </div>
           <div className={styles.right}>Right</div>
