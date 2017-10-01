@@ -7,7 +7,7 @@ const OtherDocument = () => <img className={styles.icon} src="/assets/images/lin
 
 const LinkDocument = ({ item }) => {
   return (
-    <a href={item.url} className={styles.main} key={item._id}>
+    <a href={item.url} className={styles.main} key={item._id} target="_blank">
       <div className={styles.wrapIcon}>
         {item.type === 'youtube' ? YoutubeDocument() : OtherDocument()}
       </div>
