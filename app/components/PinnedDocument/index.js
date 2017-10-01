@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
+
+import Header from 'core/Header';
 import PdfDocument from './PdfDocument';
 import LinkDocument from './LinkDocument';
 
@@ -22,14 +24,7 @@ const LinkType = item => {
 const PinnedDocumenList = ({ model }) => {
   return (
     <div className={styles.main}>
-      <div className={styles.header}>
-        <div className={styles.wrapIcon}>
-          <img className={styles.icon} src="/assets/images/documents.svg"/>
-        </div>
-        <div className={styles.title}>
-          Documents
-        </div>
-      </div>
+      <Header title="Documents" />
       <ul className={styles.content}>
         {model.map(item => {
           return item.type === 'pdf' ? PdfType(item) : LinkType(item);
