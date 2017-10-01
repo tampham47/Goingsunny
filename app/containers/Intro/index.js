@@ -19,15 +19,18 @@ class Intro extends Component {
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
     const url = 'http://api.goingsunny.com/api/v1';
-    return fetch(`${url}/session?query={"sessionName":"${sessionName}"}`, {
+    const query = JSON.stringify({
+      sessionName,
+      roomName: '',
+    });
+    return fetch(`${url}/session?populate=_user&query=${query}`, {
       method: 'GET'
     })
-    .then(response => { return response.json(); });
+    .then(response => { return response.json(); })
+    .then(models => {
+      return models.map(i => i._user);
+    });
   }
-
-  // static fetchData({ store, params, history }) {
-  //   return Intro.initial();
-  // }
 
   constructor(props) {
     super(props);
@@ -49,7 +52,7 @@ class Intro extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="The New World" />
+        <Helmet title="A first online English club in Vietnam" />
 
         <div className="container">
           <Timer />
