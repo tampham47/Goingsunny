@@ -35,7 +35,7 @@ class UserList extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <Header title="Who will be in next session!" />
+        <Header title="Users have joined next session" />
         <div className={styles.userList}>
           {this.state.users.map(function(item, index) {
             return (
