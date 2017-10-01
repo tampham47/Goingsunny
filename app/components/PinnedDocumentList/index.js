@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.css';
 import PdfDocument from './components/PdfDocument';
 import LinkDocument from './components/LinkDocument';
-import dummyData from './dummyData';
+// import dummyData from './dummyData';
 
 const PdfType = item => {
   return (
@@ -20,7 +20,7 @@ const LinkType = item => {
   );
 };
 
-const PinnedDocumenList = () => {
+const PinnedDocumenList = ({ model }) => {
   return (
     <div className={styles.main}>
       <div className={styles.header}>
@@ -31,13 +31,11 @@ const PinnedDocumenList = () => {
           Documents
         </div>
       </div>
-      <section>
-        <ul className={styles.content}>
-          {dummyData.map(item => {
-            return item.type === 'pdf' ? PdfType(item) : LinkType(item);
-          })}
-        </ul>
-      </section>
+      <ul className={styles.content}>
+        {model.map(item => {
+          return item.type === 'pdf' ? PdfType(item) : LinkType(item);
+        })}
+      </ul>
     </div>
   );
 };

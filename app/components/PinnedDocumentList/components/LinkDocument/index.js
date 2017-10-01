@@ -7,19 +7,19 @@ const OtherDocument = () => <img className={styles.icon} src="/assets/images/lin
 
 const LinkDocument = ({ item }) => {
   return (
-    <a href={item.link} className={styles.main}>
+    <a href={item.url} className={styles.main} key={item._id}>
       <div className={styles.wrapIcon}>
         {item.type === 'youtube' ? YoutubeDocument() : OtherDocument()}
       </div>
       <div className={styles.wrapContent}>
         <div className={styles.title}>
-          {item.name}
+          {item.title}
         </div>
         <div className={styles.description}>
           {item.description}
         </div>
         <div className={styles.link}>
-          {item.link}
+          {item.url}
         </div>
       </div>
     </a>

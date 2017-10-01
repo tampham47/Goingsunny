@@ -4,14 +4,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  border: 1px solid #e3eaef;
   text-decoration: none;
-}
-
-.main:hover {
-  opacity: 0.5;
-  cursor: hand;
 }
 
 .wrapIcon {
