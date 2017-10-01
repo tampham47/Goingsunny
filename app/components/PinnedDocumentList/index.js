@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
-import PdfDocument from './components/PdfDocument';
-import LinkDocument from './components/LinkDocument';
-// import dummyData from './dummyData';
+import PdfDocument from './PdfDocument';
+import LinkDocument from './LinkDocument';
 
 const PdfType = item => {
   return (
