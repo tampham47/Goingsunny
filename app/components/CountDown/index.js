@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import P from 'prop-types';
+import React, { Component } from 'react';
 import styles from './styles.css';
 
 class Countdown extends Component {
@@ -113,9 +114,9 @@ class Countdown extends Component {
   }
 }
 
-Countdown.propTypes = {
-  date: PropTypes.string.isRequired,
-  hideDays: PropTypes.bool,
+Countdown.P = {
+  date: P.instanceOf(Date).isRequired,
+  hideDays: P.bool,
 };
 
 Countdown.defaultProps = {

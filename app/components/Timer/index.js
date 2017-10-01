@@ -14,6 +14,8 @@ class Timer extends Component {
     let showTimer = false;
     const today = moment().utcOffset(7);
 
+    console.log('get hour', today.get('hour'));
+
     if (today.get('hour') < 20) {
       today.set({ hour: 20, minute: 0, second: 0, millisecond: 0 });
       showTimer = true;
@@ -23,7 +25,7 @@ class Timer extends Component {
       <section className={styles.main}>
         {showTimer ? (
         <div className={styles.timer}>
-          <CountDown date={today.toDate().toDateString()} hideDays />
+          <CountDown date={today.toDate()} hideDays />
         </div>
         ) : (
         <p>
