@@ -23,12 +23,12 @@ class Timer extends Component {
       <section className={styles.main}>
         {showTimer ? (
         <div className={styles.timer}>
-          <CountDown date={today.toDate().toDateString()} hideDays />
+          <CountDown date={today.toDate()} hideDays />
         </div>
         ) : (
         <p>
-          Are you ready, the party time is started, you are not too late.
-          Just click on below button and wait maximun to 2 mins.
+          Are you ready, the party time is started, you are not too late.<br/>
+          Just click on below button and wait maximun to 2 mins.<br/>
           The system will lead you to another one to talk.
         </p>
         )}
