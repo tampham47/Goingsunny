@@ -6,6 +6,7 @@
   --color4: #BE3144;
 
   --header: 46px;
+  --baseline: 12px;
 }
 
 /* 1rem = 10px */
@@ -13,7 +14,8 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
   font-size: 1.6rem;
   margin: 0;
 }
@@ -34,4 +36,3 @@ main {
 section {
   margin: 4rem 0;
 }
-
