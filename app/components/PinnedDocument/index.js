@@ -23,14 +23,14 @@ const LinkType = item => {
 
 const PinnedDocumenList = ({ model }) => {
   return (
-    <div className={styles.main}>
+    <section className={styles.main}>
       <Header title="Documents" />
       <ul className={styles.content}>
         {model.map(item => {
           return item.type === 'pdf' ? PdfType(item) : LinkType(item);
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

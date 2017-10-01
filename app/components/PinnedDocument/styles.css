@@ -10,11 +10,11 @@
   width: 100%;
   justify-content: space-between;
   align-content: center;
-  margin-top: 10px;
+  margin: 0;
 }
 
 .content::after {
-  content: "";
+  content: '';
   width: 32.5%;
 }
   
@@ -30,5 +30,4 @@
 .item:hover {
   opacity: 0.5;
   cursor: hand;
-}  
-  
+}
