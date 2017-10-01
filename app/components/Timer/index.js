@@ -14,8 +14,6 @@ class Timer extends Component {
     let showTimer = false;
     const today = moment().utcOffset(7);
 
-    console.log('get hour', today.get('hour'));
-
     if (today.get('hour') < 20) {
       today.set({ hour: 20, minute: 0, second: 0, millisecond: 0 });
       showTimer = true;
@@ -29,8 +27,8 @@ class Timer extends Component {
         </div>
         ) : (
         <p>
-          Are you ready, the party time is started, you are not too late.
-          Just click on below button and wait maximun to 2 mins.
+          Are you ready, the party time is started, you are not too late.<br/>
+          Just click on below button and wait maximun to 2 mins.<br/>
           The system will lead you to another one to talk.
         </p>
         )}
