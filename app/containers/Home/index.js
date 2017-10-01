@@ -9,6 +9,7 @@ import Payment from 'components/Payment';
 import RelatedPost from 'components/RelatedPost';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
+import PinnedDocument from 'components/PinnedDocument';
 
 import styles from './styles.css';
 
@@ -31,17 +32,33 @@ class Intro extends Component {
     });
   }
 
+  static getPinnedDocument() {
+    const url = 'http://api.goingsunny.com/api/v1';
+    return fetch(`${url}/pinedPost?query={"state": "public"}`, {
+      method: 'GET'
+    })
+    .then(response => { return response.json(); });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       busy: false,
       joinedUsers: [],
+      pinnedDocument: []
     }
   }
 
   componentDidMount() {
     Intro.initial().then(body => {
       this.setState({ joinedUsers: body });
+    })
+    .catch(err => {
+      this.setState({ err });
+    });
+
+    Intro.getPinnedDocument().then(body => {
+      this.setState({ pinnedDocument: body });
     })
     .catch(err => {
       this.setState({ err });
@@ -56,6 +73,7 @@ class Intro extends Component {
         <div className="container">
           <Timer />
           <UserList model={this.state.joinedUsers} />
+          <PinnedDocument model={this.state.pinnedDocument} />
           <Payment />
         </div>
       </div>
