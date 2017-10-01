@@ -1,11 +1,13 @@
 import React from 'react';
+
+import iconPdf from './ico-pdf.svg';
 import styles from './styles.css';
 
 const PdfDocument = ({ item }) => {
   return (
     <a href={item.url} className={styles.main} key={item._id} target="_blank">
       <div className={styles.wrapIcon}>
-        <img className={styles.icon} src="/assets/images/pdf.svg" />
+        <img className={styles.icon} src={iconPdf} />
       </div>
       <div className={styles.wrapContent}>
         <div className={styles.title}>
