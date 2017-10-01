@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.wraper {
+  flex: 0;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  justify-content: flex-start;
+  align-self: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: black;
+}
