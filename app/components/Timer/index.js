@@ -10,6 +10,10 @@ import styles from './styles.css';
 
 
 class Timer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     let showTimer = false;
     const today = moment().utcOffset(7);
@@ -42,8 +46,14 @@ class Timer extends Component {
   }
 }
 
-function mapStateToProps() {
-  return {}
-}
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
 
-export default connect(mapStateToProps)(Timer)
+const mapDispatchToProps = (dispatch) => ({
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);
