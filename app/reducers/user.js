@@ -4,9 +4,9 @@
 
 const defaultState = {};
 
-export default user = (state = defaultState, action) => {
+export default (state = defaultState, action) => {
   switch(action.type) {
-    case 'SET_USER':
+    case 'UPDATE_USER':
       return Object.assign({}, state, action.payload);
       break
     default:
