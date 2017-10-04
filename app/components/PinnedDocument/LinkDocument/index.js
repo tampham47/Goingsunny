@@ -1,9 +1,21 @@
 import React from 'react';
+
+import iconYoutube from './ico-youtube.svg';
+import iconLink from './ico-link.svg';
 import styles from './styles.css';
 
-const YoutubeDocument = () => <img className={styles.icon} src="/assets/images/youtube.svg"/>;
 
-const OtherDocument = () => <img className={styles.icon} src="/assets/images/link.svg"/>;
+const YoutubeDocument = () => {
+  return (
+    <img className={styles.icon} src={iconYoutube} />
+  );
+}
+
+const OtherDocument = () => {
+  return (
+    <img className={styles.icon} src={iconLink} />
+  );
+}
 
 const LinkDocument = ({ item }) => {
   return (

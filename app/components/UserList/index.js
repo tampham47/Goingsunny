@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import Header from 'core/Header';
 import User from './UserInfo';
 import styles from './styles.css';
 
@@ -34,7 +35,7 @@ class UserList extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <h5>User List</h5>
+        <Header title="Users have joined next session" />
         <div className={styles.userList}>
           {this.state.users.map(function(item, index) {
             return (
