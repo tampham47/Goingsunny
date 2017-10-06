@@ -57,6 +57,7 @@ class Intro extends Component {
       this.setState({ err });
     });
 
+
     Intro.getPinnedDocument().then(body => {
       this.setState({ pinnedDocument: body });
     })
