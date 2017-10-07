@@ -13,7 +13,7 @@ import RelatedPost from 'components/RelatedPost';
 import styles from './styles.css';
 
 
-class Intro extends Component {
+class Home extends Component {
 
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
@@ -49,14 +49,14 @@ class Intro extends Component {
   }
 
   componentDidMount() {
-    Intro.initial().then(body => {
+    Home.initial().then(body => {
       this.setState({ joinedUsers: body });
     })
     .catch(err => {
       this.setState({ err });
     });
 
-    Intro.getRelatedPost().then(body => {
+    Home.getRelatedPost().then(body => {
       this.setState({ relatedPost: body });
     })
     .catch(err => {
@@ -84,4 +84,4 @@ function mapStateToProps() {
   return {}
 }
 
-export default connect(mapStateToProps)(Intro)
+export default connect(mapStateToProps)(Home);
