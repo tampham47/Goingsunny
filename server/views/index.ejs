@@ -12,8 +12,32 @@
     <%- metaHeader.link.toString() %>
     <%- metaHeader.script.toString() %>
     <%- metaHeader.style.toString() %>
+
+    <style>
+      .splash {
+        position: fixed;
+        left: 0; top: 0; right: 0; bottom: 0;
+        z-index: 99;
+        background-color: #303841;
+      }
+      .splash .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .splash .center img {
+        width: 50px;
+      }
+    </style>
   </head>
   <body>
+    <div class="splash" id="splash-screen">
+      <div class="center">
+        <img src="/bottle.svg" alt="">
+      </div>
+    </div>
+
     <div id="root"><%- html %></div>
     <script type="text/javascript" charset="utf-8">
       window.__REDUX_STATE__ = '<%= reduxState %>';

@@ -29,6 +29,10 @@ class App extends Component {
         detail: message,
       }));
     });
+
+    setTimeout(() => {
+      document.getElementById('splash-screen').style.display = 'none';
+    }, 50);
   }
 
   render() {
