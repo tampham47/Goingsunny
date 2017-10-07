@@ -15,17 +15,18 @@ class UserList extends Component {
     super(props);
 
     this.state = {
-      joinedUsers: props.model || [],
+      user: null,
+      joinedList: props.model || [],
     }
 
     this.newCommingUser = this.newCommingUser.bind(this);
   }
 
   newCommingUser(e) {
-    const joinedUsers = this.state.joinedUsers;
-    joinedUsers.push(e.detail);
+    const joinedList = this.state.joinedList;
+    joinedList.push(e.detail);
 
-    this.setState({ joinedUsers });
+    this.setState({ joinedList });
   }
 
   componentDidMount() {
@@ -38,17 +39,20 @@ class UserList extends Component {
   }
 
   componentWillReceiveProps(next) {
-    this.setState({
-      joinedUsers: next.model,
-    })
+    if (this.props.model !== next.model) {
+      this.setState({ joinedList: next.model });
+    }
+    if (this.props.user !== next.user) {
+      this.setState({ user });
+    }
   }
 
   render() {
     return (
       <section className={styles.main}>
-        <Header title="joinedUsers have joined next session" />
+        <Header title="joinedList have joined next session" />
         <div className={styles.userList}>
-          {this.state.joinedUsers.map(function(item, index) {
+          {this.state.joinedList.map(function(item, index) {
             return (
               <div key={index} className={styles.userItem}>
                 <User model={item}/>
