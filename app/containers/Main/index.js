@@ -8,7 +8,7 @@ import moment from 'moment';
 import styles from './styles.css';
 
 
-class Intro extends Component {
+class Main extends Component {
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
     return fetch(`${config.API_BASE_URL}/sesion?query={sessionName:${sessionName}}`, {
@@ -19,7 +19,7 @@ class Intro extends Component {
 
   // static fetchData({ store, params, history }) {
   //   let { id } = params;
-  //   return Intro.initial();
+  //   return Main.initial();
   // }
 
   constructor(props) {
@@ -31,7 +31,7 @@ class Intro extends Component {
   }
 
   componentDidMount() {
-    Intro.initial().then(body => {
+    Main.initial().then(body => {
       console.log('joinedUsers', body);
       this.setState({ joinedUsers: body });
     })
@@ -43,7 +43,7 @@ class Intro extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="Intro" />
+        <Helmet title="Main" />
         <h1 className={styles.title}>Main</h1>
         <div>
           <img src="/assets/images/head.png"/>
@@ -58,4 +58,4 @@ function mapStateToProps() {
   return {}
 }
 
-export default connect(mapStateToProps)(Intro)
+export default connect(mapStateToProps)(Main)
