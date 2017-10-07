@@ -9,9 +9,16 @@
 
 .list {
   display: flex;
-  justify-content: space-around;
-  width: 400px;
+  justify-content: space-between;
+  width: 450px;
   margin-top: 24px;
+}
+.divider {
+  flex: 0;
+}
+.divider img {
+  width: 30px;
+  margin-top: 20px;
 }
 
 .control {
@@ -21,4 +28,14 @@
 
 .button {
   width: 120px;
+  border-color: var(--color4);
+  background-color: var(--color4);
+  color: white;
+  font-size: 1.4rem;
+  height: auto;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  color: white;
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import UserInfo from '../UserInfo';
+
+import matched from './matched.svg';
 import styles from './styles.css';
 
 
@@ -14,6 +16,9 @@ const MatchedGroup = (props) => {
       </h5>
       <div className={styles.list}>
         <UserInfo />
+        <div className={styles.divider}>
+          <img src={matched} alt="matched" />
+        </div>
         <UserInfo />
       </div>
       <div className={styles.control}>

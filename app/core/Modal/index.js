@@ -5,7 +5,7 @@ import styles from './styles.css';
 
 
 const Modal = (props) => {
-  const { isShow, children, close } = props;
+  const { isShow, children, dismiss } = props;
   let mainClass = styles.main;
   if (isShow) {
     mainClass += ` ${styles.active}`;
@@ -14,7 +14,7 @@ const Modal = (props) => {
   return (
     <div className={mainClass}>
       <div className={styles.wrapper}>
-        <button className={styles.close} onClick={close}>Close</button>
+        <button className={styles.close} onClick={dismiss}>Close</button>
         {children}
       </div>
     </div>
@@ -23,7 +23,7 @@ const Modal = (props) => {
 
 Modal.propTypes = {
   isShow: T.bool.isRequired,
-  close: T.func.isRequired,
+  dismiss: T.func.isRequired,
   children: T.node,
 }
 
