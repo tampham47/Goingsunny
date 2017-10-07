@@ -15,6 +15,8 @@ class Payment extends Component {
     this.state = {
       isShowDetail: false,
     };
+    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleDissmiss = this.handleDissmiss.bind(this);
   }
 
   handleOnClick() {
@@ -30,13 +32,13 @@ class Payment extends Component {
       <section className={styles.main}>
         <button
           className={styles.momo}
-          onClick={() => this.handleOnClick()}
+          onClick={this.handleOnClick}
         >
           Buy us a beer via MOMO
         </button>
         <Modal
           isShow={this.state.isShowDetail}
-          dismiss={() => this.handleDissmiss()}
+          dismiss={this.handleDissmiss}
         >
           <Detail />
         </Modal>
