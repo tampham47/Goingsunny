@@ -17,18 +17,26 @@ class Payment extends Component {
     };
   }
 
+  handleOnClick() {
+    this.setState({ isShowDetail: !this.state.isShowDetail })
+  }
+
+  handleDissmiss() {
+    this.setState({ isShowDetail: false })
+  }
+
   render() {
     return (
       <section className={styles.main}>
         <button
           className={styles.momo}
-          onClick={() => this.setState({isShowDetail: !this.state.isShowDetail})}
+          onClick={() => this.handleOnClick()}
         >
           Buy us a beer via MOMO
         </button>
         <Modal
           isShow={this.state.isShowDetail}
-          dismiss={() => this.setState({isShowDetail: false}) }
+          dismiss={() => this.handleDissmiss()}
         >
           <Detail />
         </Modal>
