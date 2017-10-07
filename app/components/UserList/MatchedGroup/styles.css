@@ -10,7 +10,7 @@
 .list {
   display: flex;
   justify-content: space-between;
-  width: 450px;
+  width: 480px;
   margin-top: 24px;
 }
 .divider {

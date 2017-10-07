@@ -7,7 +7,8 @@ import styles from './styles.css';
 
 
 const MatchedGroup = (props) => {
-  const modelList = props.modelList;
+  const { user1, user2, room } = props;
+  console.log('MatchedGroup', user1, user2);
 
   return (
     <div className={styles.main}>
@@ -15,11 +16,11 @@ const MatchedGroup = (props) => {
         Let have a great talk with your friend!
       </h5>
       <div className={styles.list}>
-        <UserInfo />
+        <UserInfo model={user1} />
         <div className={styles.divider}>
           <img src={matched} alt="matched" />
         </div>
-        <UserInfo />
+        <UserInfo model={user2} />
       </div>
       <div className={styles.control}>
         <button className={styles.button}>GO</button>

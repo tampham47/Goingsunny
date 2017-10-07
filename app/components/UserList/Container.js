@@ -15,27 +15,52 @@ class UserList extends Component {
     super(props);
 
     this.state = {
-      user: null,
+      user: props.user,
       joinedList: props.model || [],
+      isMatched: false,
+      room: '',
     }
 
-    this.newCommingUser = this.newCommingUser.bind(this);
+    this.userEntered = this.userEntered.bind(this);
+    this.matched = this.matched.bind(this);
+    this.dismiss = this.dismiss.bind(this);
   }
 
-  newCommingUser(e) {
+  userEntered(e) {
     const joinedList = this.state.joinedList;
     joinedList.push(e.detail);
 
     this.setState({ joinedList });
   }
 
+  matched(e) {
+    const data = e.detail;
+    this.setState({
+      isMatched: true,
+      room: data.channel,
+    });
+  }
+
+  dismiss() {
+    this.setState({ isMatched: false });
+  }
+
   componentDidMount() {
     // this will fired when people join the class
-    window.addEventListener('SYSTEM_CLASS_DATA', this.newCommingUser);
+    window.addEventListener('SYSTEM_CLASS_DATA', this.userEntered);
+    const user = this.state.user;
+    console.log('Subscribe', user._id);
+    if (user._id) {
+      window.addEventListener(`SYSTEM_${user._id}`, this.matched);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('SYSTEM_CLASS_DATA', this.newCommingUser);
+    window.removeEventListener('SYSTEM_CLASS_DATA', this.userEntered);
+    const user = this.state.user;
+    if (user.id) {
+      window.removeEventListener(`SYSTEM_${user._id}`, this.matched);
+    }
   }
 
   componentWillReceiveProps(next) {
@@ -43,7 +68,12 @@ class UserList extends Component {
       this.setState({ joinedList: next.model });
     }
     if (this.props.user !== next.user) {
+      const user = next.user;
       this.setState({ user });
+      if (user._id) {
+        console.log('Subscribe', user._id);
+        window.addEventListener(`SYSTEM_${user._id}`, this.matched);
+      }
     }
   }
 
@@ -61,9 +91,15 @@ class UserList extends Component {
           })}
         </div>
 
-        <Modal dismiss={() => null}>
-          <MatchedGroup />
+        {this.state.isMatched && (
+        <Modal isShow={this.state.isMatched} dismiss={this.dismiss}>
+          <MatchedGroup
+            user1={this.state.user}
+            user2={null}
+            room={this.state.room}
+          />
         </Modal>
+        )}
       </section>
     )
   }
