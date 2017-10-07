@@ -52,6 +52,9 @@ class Intro extends Component {
         user: body,
         session: moment().format('YYYYMMDD'),
       };
+
+      // console.log('body', `SYSTEM_${body._id}`);
+      mqtt.subscribe(`SYSTEM_${body._id}`);
       mqtt.publish('join-class', JSON.stringify(payload));
 
       this.setState({
