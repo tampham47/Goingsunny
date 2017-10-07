@@ -57,7 +57,7 @@ class UserList extends Component {
           })}
         </div>
 
-        <Modal isShow dismiss={() => null}>
+        <Modal dismiss={() => null}>
           <MatchedGroup />
         </Modal>
       </section>
