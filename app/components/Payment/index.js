@@ -17,14 +17,16 @@ const PaymentInfo = () => (
     </div>
     <div className={styles.wrapContent}>
       <div className={styles.phone}>
-        Phone: +841643-652-922
+        Phone: +84 164-365-2922
       </div>
       <div className={styles.note}>
-        Vui lòng nhắn vào khung bên dưới sau khi đã chuyển tiền thành công. Xin cảm ơn!
+        <p>Sự ủng hộ của bạn là niềm động lực, là niềm vinh hạnh rất lớn để chúng mình tiến nhanh về phía trước. Cảm ơn các bạn rất nhiều!</p>
+        <i>* Bạn mở App Momo rồi quét mã QR bên dưới.</i>
       </div>
     </div>
   </div>
 );
+
 class Payment extends Component {
   constructor(props) {
     super(props);
@@ -36,13 +38,12 @@ class Payment extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <h5>Payment</h5>
         <div className={styles.payment}>
           <button
-            className="button-primary"
+            className={styles.momo}
             onClick={() => this.setState({isShowPaymentInfo: !this.state.isShowPaymentInfo})}
           >
-            Buy us a beer
+            Buy us a beer via MOMO
           </button>
           {this.state.isShowPaymentInfo ? PaymentInfo() : null}
         </div>
