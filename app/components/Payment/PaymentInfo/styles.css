@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  width: 450px;
+  height: 140px;
+  background: #e3eaef;
+}
+
+.qrCode {
+  display: flex;
+  width: 120px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  border: 2px solid skyblue;
+}
+
+.wrapContent {
+  margin: 10px;
+  font-size: 1rem;
+}
+
+.phone {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.note {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.note p {
+  margin-bottom: 5px;
+}

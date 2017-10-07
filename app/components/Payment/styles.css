@@ -1,70 +1,14 @@
 .main {
   height: 300px;
-}
-
-.payment {}
+  }
 
 .momo {
   background-color: #de198b;
   color: white;
   border-color: white;
-}
-.momo:active,
-.momo:hover,
-.momo:focus {
+  }
+  .momo:active,
+  .momo:hover,
+  .momo:focus {
   color: white;
-}
-
-.paymentInfo {
-  display: flex;
-  width: 450px;
-  height: 140px;
-  margin-top: 12px;
-  border-radius: 5px;
-  border: 1px solid #e3eaef;
-}
-
-.wrapQRCode {
-  display: flex;
-  width: 140px;
-  height: 140px;
-  margin-right: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.qrCode {
-  display: flex;
-  width: 130px;
-  height: 130px;
-  border: 2px solid skyblue;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon {
-  width: 120px;
-  height: 120px;
-}
-
-.wrapContent {
-  width: 280px;
-  height: 100px;
-  font-size: 1rem;
-  margin-top: 8px;
-}
-
-.phone {
-  height: 30px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-align: left;
-}
-
-.note {
-  font-size: 1.2rem;
-  text-align: left;
-}
-.note p {
-  margin-bottom: 6px;
-}
+  }
