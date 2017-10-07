@@ -16,6 +16,7 @@ class UserList extends Component {
 
     this.state = {
       user: props.user,
+      user2: null,
       joinedList: props.model || [],
       isMatched: false,
       room: '',
@@ -37,7 +38,8 @@ class UserList extends Component {
     const data = e.detail;
     this.setState({
       isMatched: true,
-      room: data.channel,
+      room: data.room,
+      user2: data.matched,
     });
   }
 
@@ -95,7 +97,7 @@ class UserList extends Component {
         <Modal isShow={this.state.isMatched} dismiss={this.dismiss}>
           <MatchedGroup
             user1={this.state.user}
-            user2={null}
+            user2={this.state.user2}
             room={this.state.room}
           />
         </Modal>
