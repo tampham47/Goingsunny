@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import moment from 'moment';
 import config from 'config';
-
 import Helmet from 'react-helmet'
+
 import Payment from 'components/Payment';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
