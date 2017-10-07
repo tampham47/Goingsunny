@@ -12,11 +12,18 @@ import styles from './styles.css';
 class Timer extends Component {
   constructor(props) {
     super(props);
+    this.facebookLogin = this.facebookLogin.bind(this);
+  }
+
+  facebookLogin() {
+    console.log('facebookLogin');
   }
 
   render() {
     let showTimer = false;
     const today = moment().utcOffset(7);
+    const { user } = this.props;
+    console.log('render', user);
 
     if (today.get('hour') < 20) {
       today.set({ hour: 20, minute: 0, second: 0, millisecond: 0 });
@@ -36,7 +43,11 @@ class Timer extends Component {
           The system will lead you to another one to talk.
         </p>
         )}
+        {user._id ? (
         <button className="button-primary">Join next session</button>
+        ) : (
+        <button className="button-primary">Login via Facebook</button>
+        )}
         <div className={styles.quote}>
           <p>You don't have to be great to start</p>
           <p>but you have to start to be great!</p>

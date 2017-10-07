@@ -1,23 +1,28 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
-import Helmet from 'react-helmet'
-
+import React from 'react';
 import styles from './styles.css';
 
+import Header from 'core/Header';
+import Pdf from './Pdf';
+import Link from './Link';
 
-class RelatedPost extends Component {
-  render() {
-    return (
-      <section className={styles.main}>
-        <h5>Related Post</h5>
-      </section>
-    )
-  }
-}
 
-function mapStateToProps() {
-  return {}
-}
+const PinnedDocuments = ({ model }) => {
+  return (
+    <section className={styles.main}>
+      <Header title="Documents" />
+      <ul className={styles.content}>
+        {model.map((item, index) => {
+          const Elm = item.type === 'pdf' ? Pdf : Link;
+          return (
+            <li key={index} className={styles.item}>
+              <Elm item={item} />
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+};
 
-export default connect(mapStateToProps)(RelatedPost)
+export default PinnedDocuments;
+
