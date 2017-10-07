@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import Header from 'core/Header';
+import Modal from 'core/Modal';
+
 import User from './UserInfo';
+import MatchedGroup from './MatchedGroup';
 import styles from './styles.css';
 
 
@@ -53,6 +56,10 @@ class UserList extends Component {
             )
           })}
         </div>
+
+        <Modal isShow>
+          <MatchedGroup />
+        </Modal>
       </section>
     )
   }

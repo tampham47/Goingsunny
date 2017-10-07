@@ -5,7 +5,6 @@ import moment from 'moment';
 import config from 'config';
 import Helmet from 'react-helmet'
 
-import Modal from 'core/Modal';
 import Payment from 'components/Payment';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
@@ -75,10 +74,6 @@ class Intro extends Component {
           <UserList model={this.state.joinedUsers} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
-          <Modal isShow>
-            <p>Bài thơ đầu anh viết tặng em,</p>
-            <p>Là bài thơ kể về đôi dép</p>
-          </Modal>
         </div>
       </div>
     )
