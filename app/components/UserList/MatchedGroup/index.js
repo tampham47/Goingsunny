@@ -23,7 +23,8 @@ const MatchedGroup = (props) => {
         <UserInfo model={user2} />
       </div>
       <div className={styles.control}>
-        <button className={styles.button}>GO</button>
+        <a className={styles.button} target="_blank"
+          href={`https://appear.in/${room}`}>GO</a>
       </div>
     </div>
   );
