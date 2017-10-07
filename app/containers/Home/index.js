@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import moment from 'moment';
-import config from 'config';
 import Helmet from 'react-helmet'
 
 import Payment from 'components/Payment';
@@ -17,7 +16,7 @@ class Home extends Component {
 
   static initial() {
     const sessionName = moment().format('YYYYMMDD');
-    const url = 'http://api.goingsunny.com/api/v1';
+    const url = 'https://api.goingsunny.com/api/v1';
     const query = JSON.stringify({
       sessionName,
       roomName: '',
@@ -32,7 +31,7 @@ class Home extends Component {
   }
 
   static getRelatedPost() {
-    const url = 'http://api.goingsunny.com/api/v1';
+    const url = 'https://api.goingsunny.com/api/v1';
     return fetch(`${url}/pinedPost?query={"state": "public"}`, {
       method: 'GET'
     })
