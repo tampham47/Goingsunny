@@ -82,7 +82,7 @@ class UserList extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <Header title="joinedList have joined next session" />
+        <Header title="Your friends have joined next session" />
         <div className={styles.userList}>
           {this.state.joinedList.map(function(item, index) {
             return (
