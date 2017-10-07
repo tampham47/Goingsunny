@@ -6,10 +6,9 @@ import config from 'config';
 
 import Helmet from 'react-helmet'
 import Payment from 'components/Payment';
-import RelatedPost from 'components/RelatedPost';
 import Timer from 'components/Timer';
 import UserList from 'components/UserList';
-import PinnedDocument from 'components/PinnedDocument';
+import RelatedPost from 'components/RelatedPost';
 
 import styles from './styles.css';
 
@@ -32,7 +31,7 @@ class Intro extends Component {
     });
   }
 
-  static getPinnedDocument() {
+  static getRelatedPost() {
     const url = 'http://api.goingsunny.com/api/v1';
     return fetch(`${url}/pinedPost?query={"state": "public"}`, {
       method: 'GET'
@@ -45,7 +44,7 @@ class Intro extends Component {
     this.state = {
       busy: false,
       joinedUsers: [],
-      pinnedDocument: []
+      relatedPost: []
     }
   }
 
@@ -57,8 +56,8 @@ class Intro extends Component {
       this.setState({ err });
     });
 
-    Intro.getPinnedDocument().then(body => {
-      this.setState({ pinnedDocument: body });
+    Intro.getRelatedPost().then(body => {
+      this.setState({ relatedPost: body });
     })
     .catch(err => {
       this.setState({ err });
@@ -73,7 +72,7 @@ class Intro extends Component {
         <div className="container">
           <Timer />
           <UserList model={this.state.joinedUsers} />
-          <PinnedDocument model={this.state.pinnedDocument} />
+          <RelatedPost model={this.state.relatedPost} />
           <Payment />
         </div>
       </div>

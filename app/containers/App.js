@@ -24,6 +24,7 @@ class App extends Component {
       try { message = JSON.parse(mess.toString()); }
       catch (err) {}
 
+      console.log('SOCKET', topic, message);
       window.dispatchEvent(new CustomEvent(topic, {
         detail: message,
       }));
@@ -37,7 +38,7 @@ class App extends Component {
           defaultTitle="Goingsunny"
           titleTemplate="%s - Goingsunny"
           meta={[{
-            "name": "description", 
+            "name": "description",
             "content": "The biggest online English club in Vietnam!!!"
           },]}
           htmlAttributes={{"lang": "en"}}
