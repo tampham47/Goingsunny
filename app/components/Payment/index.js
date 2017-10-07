@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 
 import Header from 'core/Header';
 import Modal from 'core/Modal';
-import PaymentInfo from './PaymentInfo';
+import Detail from './Detail';
 
 import styles from './styles.css';
 
@@ -13,7 +13,7 @@ class Payment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShowPaymentInfo: false,
+      isShowDetail: false,
     };
   }
 
@@ -22,15 +22,15 @@ class Payment extends Component {
       <section className={styles.main}>
         <button
           className={styles.momo}
-          onClick={() => this.setState({isShowPaymentInfo: !this.state.isShowPaymentInfo})}
+          onClick={() => this.setState({isShowDetail: !this.state.isShowDetail})}
         >
           Buy us a beer via MOMO
         </button>
         <Modal
-          dismiss={() => this.setState({isShowPaymentInfo: false}) }
-          isShow={this.state.isShowPaymentInfo}
+          isShow={this.state.isShowDetail}
+          dismiss={() => this.setState({isShowDetail: false}) }
         >
-          <PaymentInfo />
+          <Detail />
         </Modal>
       </section>
     )

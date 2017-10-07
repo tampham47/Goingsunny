@@ -1,14 +1,14 @@
 .main {
-  height: 300px;
-  }
+  margin-bottom: 10rem;
+}
 
 .momo {
   background-color: #de198b;
   color: white;
   border-color: white;
-  }
-  .momo:active,
-  .momo:hover,
-  .momo:focus {
+}
+.momo:active,
+.momo:hover,
+.momo:focus {
   color: white;
-  }
+}

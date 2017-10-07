@@ -13,7 +13,7 @@ const PaymentInfo = () => (
       </div>
       <div className={styles.note}>
         <p>Sự ủng hộ của bạn là niềm động lực, là niềm vinh hạnh rất lớn để chúng mình tiến nhanh về phía trước. Cảm ơn các bạn rất nhiều!</p>
-        <i>* Bạn mở App Momo rồi quét mã QR bên dưới.</i>
+        <i>Bạn mở App Momo rồi quét mã QR bên cạnh nhé.</i>
       </div>
     </div>
   </div>
