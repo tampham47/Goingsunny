@@ -6,7 +6,7 @@ import styles from './styles.css';
 
 
 const UserInfo = (props) => {
-  const user = props.model;
+  const user = props.model || {};
 
   return (
     <span className={styles.main}>
@@ -14,7 +14,7 @@ const UserInfo = (props) => {
         <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
       </span>
       <span className={styles.content}>
-        <span>{user.displayName}</span>
+        <span>{user.displayName || 'User Name'}</span>
         <span>✡✡✡</span>
       </span>
     </span>

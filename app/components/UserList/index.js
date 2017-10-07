@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import Header from 'core/Header';
+import Modal from 'core/Modal';
+
 import User from './UserInfo';
+import MatchedGroup from './MatchedGroup';
 import styles from './styles.css';
 
 
@@ -14,16 +17,24 @@ class UserList extends Component {
     this.state = {
       users: props.model || [],
     }
+
+    this.newCommingUser = this.newCommingUser.bind(this);
+  }
+
+  newCommingUser(e) {
+    const users = this.state.users;
+    users.push(e.detail);
+
+    this.setState({ users });
   }
 
   componentDidMount() {
     // this will fired when people join the class
-    window.addEventListener('SYSTEM_CLASS_DATA', function(e) {
-      console.log('SYSTEM_CLASS_DATA', e.detail);
-      const users = this.state.users;
-      users.push(e.detail);
-      this.setState({ users });
-    }.bind(this));
+    window.addEventListener('SYSTEM_CLASS_DATA', this.newCommingUser);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('SYSTEM_CLASS_DATA', this.newCommingUser);
   }
 
   componentWillReceiveProps(next) {
@@ -45,6 +56,10 @@ class UserList extends Component {
             )
           })}
         </div>
+
+        <Modal dismiss={() => null}>
+          <MatchedGroup />
+        </Modal>
       </section>
     )
   }

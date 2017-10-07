@@ -29,7 +29,7 @@ class Intro extends Component {
       isAnimate: true
     });
   }
-  
+
   getAnimatedClass(name) {
     if (this.state.isAnimate) {
       return 'animated ' + name;
@@ -46,10 +46,15 @@ class Intro extends Component {
     })
     .then(response => { return response.json(); })
     .then(body => {
+      this.props.updateUser(body);
+
       const payload = {
         user: body,
         session: moment().format('YYYYMMDD'),
       };
+
+      // console.log('body', `SYSTEM_${body._id}`);
+      mqtt.subscribe(`SYSTEM_${body._id}`);
       mqtt.publish('join-class', JSON.stringify(payload));
 
       this.setState({
@@ -89,8 +94,15 @@ class Intro extends Component {
   }
 }
 
-function mapStateToProps() {
-  return {}
-}
+const mapStateToProps = () => {
+  return {};
+};
 
-export default connect(mapStateToProps)(Intro)
+const mapDispatchToProps = (dispatch) => ({
+  updateUser: (payload) => dispatch({
+    type: 'UPDATE_USER',
+    payload,
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Intro);

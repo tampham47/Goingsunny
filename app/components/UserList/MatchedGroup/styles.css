@@ -1,0 +1,41 @@
+.main {
+  background-color: white;
+  padding: 24px;
+}
+
+.message {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  margin-top: 24px;
+}
+.divider {
+  flex: 0;
+}
+.divider img {
+  width: 30px;
+  margin-top: 20px;
+}
+
+.control {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.button {
+  width: 120px;
+  border-color: var(--color4);
+  background-color: var(--color4);
+  color: white;
+  font-size: 1.4rem;
+  height: auto;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  color: white;
+}
