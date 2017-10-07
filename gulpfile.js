@@ -28,5 +28,5 @@ gulp.task('build:revServer', ['build:cpServer'], function() {
 })
 
 gulp.task('build', function() {
-  runSequence('build:revAssets', 'build:revServer')
+  runSequence('build:revAssets', 'build:revServer');
 })
