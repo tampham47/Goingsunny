@@ -13,18 +13,18 @@ let scriptSrcs
 
 let styleSrc
 if ( process.env.NODE_ENV === 'production' ) {
-  let refManifest = require('../../dist/rev-manifest.json')
+  let refManifest = require('../../../rev-manifest.json')
   scriptSrcs = [
     `/${refManifest['vendor.js']}`,
     `/${refManifest['app.js']}`,
   ]
-  styleSrc = `/${refManifest['main.css']}`
+  // styleSrc = `/${refManifest['main.css']}`
 } else {
   scriptSrcs = [
     '/vendor.js',
     '/app.js'
   ]
-  styleSrc = '/main.css'
+  // styleSrc = '/main.css'
 }
 
 export default (req, res, next)=> {

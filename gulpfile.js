@@ -17,7 +17,8 @@ gulp.task('build:revAssets', ['moveAssets'], function() {
 })
 
 gulp.task('build:cpServer', function() {
-  return gulp.src('./app/**/*.{js,ejs}')
+  // return gulp.src('./app/**/*.{js,ejs}')
+  return gulp.src('./app/**/*.*')
     .pipe(gulp.dest('./dist/server-build'))
 })
 gulp.task('build:revServer', ['build:cpServer'], function() {

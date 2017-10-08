@@ -4,7 +4,7 @@
   "description": "The goingsunny main app",
   "scripts": {
     "lint": "eslint app bin",
-    "start": "yarn build && cross-env NODE_PATH=./app concurrently --kill-others \"node server\"",
+    "start": "yarn build && cross-env NODE_PATH=./app concurrently --kill-others \"node app/server\"",
     "webpack": "webpack",
     "build": "rimraf dist/ && yarn run webpack && gulp build",
 
