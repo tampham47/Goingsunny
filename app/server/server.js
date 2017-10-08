@@ -13,7 +13,7 @@ server.use(compression());
 if (process.env.NODE_ENV === 'production') {
   server.use(Express.static(path.join(__dirname, '../..', 'public')));
 } else {
-  server.use('/assets', Express.static(path.join(__dirname, '..', 'app/assets')))
+  server.use('/assets', Express.static(path.join(__dirname, '..', 'assets')))
   server.use(Express.static(path.join(__dirname, '..', 'dist')))
 
   const webpackDevMiddleware = require('webpack-dev-middleware')

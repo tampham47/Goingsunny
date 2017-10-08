@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('moveAssets', function() {
   return gulp.src('./app/assets/**/*')
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/assets'))
 })
 
 gulp.task('build:revAssets', ['moveAssets'], function() {
