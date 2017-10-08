@@ -46,7 +46,7 @@ class Main extends Component {
         <Helmet title="Main" />
         <h1 className={styles.title}>Main</h1>
         <div>
-          <img src="/assets/images/head.png"/>
+          <img src="/head.png"/>
         </div>
         <Link to="/">back to home</Link>
       </div>

@@ -10,22 +10,27 @@ import configureStore from 'store'
 import createRoutes from 'routes'
 
 let scriptSrcs
-
 let styleSrc
-if ( process.env.NODE_ENV === 'production' ) {
-  let refManifest = require('../../../rev-manifest.json')
-  scriptSrcs = [
-    `/${refManifest['vendor.js']}`,
-    `/${refManifest['app.js']}`,
-  ]
-  // styleSrc = `/${refManifest['main.css']}`
-} else {
-  scriptSrcs = [
-    '/vendor.js',
-    '/app.js'
-  ]
-  // styleSrc = '/main.css'
-}
+
+// if ( process.env.NODE_ENV === 'production' ) {
+//   let refManifest = require('../../../rev-manifest.json')
+//   scriptSrcs = [
+//     `/${refManifest['vendor.js']}`,
+//     `/${refManifest['app.js']}`,
+//   ]
+//   // styleSrc = `/${refManifest['main.css']}`
+// } else {
+//   scriptSrcs = [
+//     '/vendor.js',
+//     '/app.js'
+//   ]
+//   // styleSrc = '/main.css'
+// }
+
+scriptSrcs = [
+  '/vendor.js',
+  '/app.js'
+]
 
 export default (req, res, next)=> {
   let history = useRouterHistory(useQueries(createMemoryHistory))()

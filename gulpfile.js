@@ -8,12 +8,12 @@ gulp.task('moveAssets', function() {
 })
 
 gulp.task('build:revAssets', ['moveAssets'], function() {
-  var rev = new $.revAll()
+  // var rev = new $.revAll()
   return gulp.src('./dist/**/*')
-    .pipe(rev.revision())
+    // .pipe(rev.revision())
     .pipe(gulp.dest('./dist/public'))
-    .pipe(rev.manifestFile())
-    .pipe(gulp.dest('./dist'))
+    // .pipe(rev.manifestFile())
+    // .pipe(gulp.dest('./dist'))
 })
 
 gulp.task('build:cpServer', function() {
@@ -22,10 +22,11 @@ gulp.task('build:cpServer', function() {
     .pipe(gulp.dest('./dist/server-build'))
 })
 gulp.task('build:revServer', ['build:cpServer'], function() {
-  var manifest = gulp.src('./dist/rev-manifest.json')
-  return gulp.src('./dist/server-build/{components,containers}/**/*')
-    .pipe($.revReplace({ manifest: manifest }))
-    .pipe(gulp.dest('./dist/server-build'))
+  return;
+  // var manifest = gulp.src('./dist/rev-manifest.json')
+  // return gulp.src('./dist/server-build/{components,containers}/**/*')
+  //   .pipe($.revReplace({ manifest: manifest }))
+  //   .pipe(gulp.dest('./dist/server-build'))
 })
 
 gulp.task('build', function() {

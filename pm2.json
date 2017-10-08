@@ -3,7 +3,7 @@
     {
       "exec_mode": "fork_mode",
       "name": "goingsunny2.0",
-      "script": "server",
+      "script": "dist/server-build/server",
       "watch": false,
       "ignore_watch": [
         "node_modules",
@@ -22,7 +22,7 @@
       "env_production": {
         "NODE_ENV": "production",
         "PORT": 4747,
-        "NODE_PATH": "./app",
+        "NODE_PATH": "./dist/server-build",
         "HOST_PATH": "goingsunny.com"
       },
       "env_staging": {
