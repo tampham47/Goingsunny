@@ -4,15 +4,44 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
 import Header from 'core/Header';
+import Modal from 'core/Modal';
+import Detail from './Detail';
+
 import styles from './styles.css';
 
-
 class Payment extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShowDetail: false,
+    };
+    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleDissmiss = this.handleDissmiss.bind(this);
+  }
+
+  handleOnClick() {
+    this.setState({ isShowDetail: !this.state.isShowDetail })
+  }
+
+  handleDissmiss() {
+    this.setState({ isShowDetail: false })
+  }
+
   render() {
     return (
       <section className={styles.main}>
-        <Header title="Payment" />
-        <p>Consectetur consectetur elit ex magna. Aute cupidatat qui adipisicing nulla qui. Duis consectetur irure consectetur laborum consectetur ut ad nostrud eiusmod non.</p>
+        <button
+          className={styles.momo}
+          onClick={this.handleOnClick}
+        >
+          Buy us a beer via MOMO
+        </button>
+        <Modal
+          isShow={this.state.isShowDetail}
+          dismiss={this.handleDissmiss}
+        >
+          <Detail />
+        </Modal>
       </section>
     )
   }
