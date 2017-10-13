@@ -33,10 +33,10 @@ class RelatedPost extends Component {
       <section className={styles.main}>
         <Header title="Documents" />
         <ul className={styles.content}>
-          {model.map((item, index) => {
+          {model.map((item) => {
             const Elm = item.type === 'pdf' ? Pdf : item.type === 'youtube' ? Youtube : Link;
             return (
-              <li key={index} className={styles.item}>
+              <li key={item._id} className={styles.item}>
                 <Elm item={item} handleOnClick={this.handleOnClick.bind(this, item)}/>
               </li>
             );
