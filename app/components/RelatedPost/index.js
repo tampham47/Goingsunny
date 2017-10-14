@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import styles from './styles.css';
 
 import Header from 'core/Header';
-import Pdf from './Pdf';
-import Youtube from './Youtube';
-import Link from './Link';
 import Modal from 'core/Modal';
+
+import Pdf from './Pdf';
+import Link from './Link';
+import Youtube from './Youtube';
 import Detail from './Youtube/Detail';
+
 
 class RelatedPost extends Component {
   constructor(props) {
