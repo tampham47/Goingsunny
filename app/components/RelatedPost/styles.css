@@ -28,6 +28,6 @@
 }
 
 .item:hover {
-  opacity: 0.5;
   cursor: pointer;
+  border: 2px solid #e3eaef;
 }
