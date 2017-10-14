@@ -36,29 +36,29 @@
   height: auto;
   font-size: 1.5rem;
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   color: black;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 
 .description {
   width: 100%;
   height: auto;
   font-size: 1.3rem;
+  color: black;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: black;
 }
 
 .link {
   width: 100%;
   height: auto;
   font-size: 1.3rem;
+  color: black;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: black;
 }
 
