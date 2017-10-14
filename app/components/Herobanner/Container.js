@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mqtt from 'middleware/mqtt';
 import moment from 'moment';
 
 import View from './View';
@@ -19,6 +20,12 @@ class HeroContainer extends Component {
 
   joinNextSession() {
     console.log('joinNextSession');
+    const payload = {
+      user: this.props.user,
+      session: moment().format('YYYYMMDD'),
+    }
+
+    mqtt.publish('join-class', JSON.stringify(payload));
   }
 
   render() {
