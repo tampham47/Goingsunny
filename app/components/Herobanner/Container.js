@@ -10,8 +10,16 @@ class HeroContainer extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isJoined: false,
+    };
+
     this.facebookLogin = this.facebookLogin.bind(this);
     this.joinNextSession = this.joinNextSession.bind(this);
+  }
+
+  componentDidMount() {
+
   }
 
   facebookLogin() {
@@ -39,7 +47,8 @@ class HeroContainer extends Component {
     }
 
     return (
-      <View showTimer={showTimer} user={user} today={today}
+      <View
+        showTimer={showTimer} user={user} today={today}
         joinNextSession={this.joinNextSession}
       />
     )
