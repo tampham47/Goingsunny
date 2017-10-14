@@ -68,8 +68,9 @@ class Home extends Component {
       <div className={styles.main}>
         <Helmet title="A first online English club in Vietnam" />
 
+        <Herobanner />
+
         <div className="container">
-          <Herobanner />
           <UserList model={this.state.joinedUsers} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
