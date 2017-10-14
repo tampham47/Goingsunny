@@ -4,7 +4,7 @@ import CountDown from 'components/CountDown';
 import styles from './styles.css';
 
 
-const TimerView = (props) => {
+const HeroView = (props) => {
   const { showTimer, user, today } = props;
 
   return (
@@ -36,4 +36,4 @@ const TimerView = (props) => {
 };
 
 
-export default TimerView;
+export default HeroView;

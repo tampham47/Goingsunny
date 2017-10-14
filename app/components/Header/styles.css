@@ -2,7 +2,7 @@
   height: var(--header);
   line-height: var(--header);
   background-color: var(--color1);
-  color: var(--color3);
+  color: var(--light);
   position: fixed;
   top: 0;
   left: 0;

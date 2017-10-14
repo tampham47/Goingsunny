@@ -53,7 +53,6 @@ class Intro extends Component {
         session: moment().format('YYYYMMDD'),
       };
 
-      // console.log('body', `SYSTEM_${body._id}`);
       mqtt.subscribe(`SYSTEM_${body._id}`);
       mqtt.publish('join-class', JSON.stringify(payload));
 
@@ -84,7 +83,7 @@ class Intro extends Component {
               <Facebook callback={this.responseFacebook} textButton={fbText} />
             )}
           </div>
-          <div className={styles.right}>Right</div>
+          <div className={styles.right}>How it works?</div>
           <div className={styles.center}>
             <div className={this.getAnimatedClass('tada')}>GOING SUNNY</div>
           </div>
