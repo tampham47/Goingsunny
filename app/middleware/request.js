@@ -8,7 +8,6 @@
 
 export default (uri, params) => {
   const url = `${host}${uri}`;
-  console.log('request', uri, url, params);
   return fetch(url, params).then(res => {
     return res.json();
   })

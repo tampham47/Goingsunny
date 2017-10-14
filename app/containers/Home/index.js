@@ -12,8 +12,8 @@ import RelatedPost from 'components/RelatedPost';
 
 import styles from './styles.css';
 
-// TODO: some functions like the 2 above are call business
-// it would like to move to business class then
+// TODO: some functions like the 2 below are called business
+// it would like to move to business folder then
 const getSession = () => {
   const sessionName = moment().format('YYYYMMDD');
   const query = JSON.stringify({
