@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import mqtt from 'middleware/mqtt';
 
 import Header from 'components/Header';
+import Skull from 'components/Skull';
 import styles from './app.css';
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
         />
         <Header />
         {this.props.children}
+        <Skull />
       </main>
     )
   }
