@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import CountDown from 'components/CountDown';
+
+import wave from './wave.svg';
 import styles from './styles.css';
 
 
@@ -9,6 +11,10 @@ const HeroView = (props) => {
 
   return (
     <section className={styles.main}>
+      <div className={styles.background}>
+        <img src={wave} alt="pirate wave" />
+      </div>
+
       <div className={styles.center}>
         <div className={styles.timerWrapper}>
           {showTimer ? (

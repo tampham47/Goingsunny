@@ -1,10 +1,13 @@
 .main {
+  position: relative;
   text-align: center;
   margin: 0;
   background-color: var(--color1);
   color: var(--light);
-  height: 70vh;
-  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  margin-top: -46px;
+  padding-top: 46px;
 }
 .center {
   position: absolute;
@@ -13,6 +16,16 @@
   width: 100%;
 }
 
+.background {
+  position: absolute;
+  bottom: -180px;
+  right: 0;
+  width: 100%;
+}
+.background image {
+  width: 100%;
+  filter: grayscale(100%);
+}
 
 button.button {
   background-color: var(--color4);
@@ -22,7 +35,9 @@ button.button {
   height: auto;
   font-size: 1.5rem;
 }
-button.button:hover {
+button.button:hover,
+button.button:active,
+button.button:focus {
   background-color: var(--color4);
   color: var(--light);
   border: var(--color4);
