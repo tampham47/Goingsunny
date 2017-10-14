@@ -66,7 +66,7 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="A first online English club in Vietnam" />
+        <Helmet title="An online English club - Goingsunny" />
 
         <Herobanner />
 
