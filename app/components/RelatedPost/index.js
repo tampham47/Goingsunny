@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import styles from './styles.css';
 
 import Header from 'core/Header';
 
 import Pdf from './Pdf';
 import Link from './Link';
 import Youtube from './Youtube';
+
+import styles from './styles.css';
+
 
 class RelatedPost extends Component {
   render() {
