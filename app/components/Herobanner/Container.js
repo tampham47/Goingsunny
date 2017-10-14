@@ -18,16 +18,10 @@ class HeroContainer extends Component {
     this.joinNextSession = this.joinNextSession.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
-  facebookLogin() {
-    console.log('facebookLogin');
-  }
+  componentDidMount() {}
+  facebookLogin() {}
 
   joinNextSession() {
-    console.log('joinNextSession');
     const payload = {
       user: this.props.user,
       session: moment().format('YYYYMMDD'),
