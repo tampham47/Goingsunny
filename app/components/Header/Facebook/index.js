@@ -7,14 +7,14 @@ import styles from './styles.css';
 
 const Facebook = (props) => {
   return (
-    <FacebookLogin 
-      cssClass="button button-primary facebook"
-      appId="1391679424181926" 
+    <FacebookLogin
+      cssClass={`button ${styles.facebook}`}
+      appId="1391679424181926"
       fields="name,email,picture"
       scope="public_profile"
-      autoLoad={true} 
+      autoLoad={true}
       textButton={props.textButton || 'Login With Facebook'}
-      callback={props.callback} 
+      callback={props.callback}
     />
   );
 };

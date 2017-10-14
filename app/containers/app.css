@@ -1,9 +1,12 @@
 /* http://colorhunt.co/c/72112 */
 :root {
-  --color1: #D3D6DB;
+  --color1: #303841;
   --color2: #3A4750;
-  --color3: #303841;
+  --color3: #D3D6DB;
   --color4: #BE3144;
+
+  --light: white;
+  --dark: black;
 
   --header: 46px;
   --baseline: 12px;
@@ -15,7 +18,7 @@ html {
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
+
   font-size: 1.6rem;
   margin: 0;
 }

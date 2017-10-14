@@ -5,7 +5,7 @@ import moment from 'moment';
 import View from './View';
 
 
-class TimerContainer extends Component {
+class HeroContainer extends Component {
   constructor(props) {
     super(props);
     this.facebookLogin = this.facebookLogin.bind(this);
@@ -31,4 +31,4 @@ class TimerContainer extends Component {
   }
 }
 
-export default TimerContainer;
+export default HeroContainer;

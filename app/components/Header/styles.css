@@ -2,7 +2,7 @@
   height: var(--header);
   line-height: var(--header);
   background-color: var(--color1);
-  color: var(--color3);
+  color: var(--light);
   position: fixed;
   top: 0;
   left: 0;
@@ -28,4 +28,12 @@
   left: 0;
   right: 0;
   z-index: 0;
+}
+
+.link {
+  color: var(--light);
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--color4);
 }

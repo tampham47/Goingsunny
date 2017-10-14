@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import moment from 'moment';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
 
 import Payment from 'components/Payment';
-import Timer from 'components/Timer';
+import Herobanner from 'components/Herobanner';
 import UserList from 'components/UserList';
 import RelatedPost from 'components/RelatedPost';
 
@@ -66,10 +66,11 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Helmet title="A first online English club in Vietnam" />
+        <Helmet title="An online English club - Goingsunny" />
+
+        <Herobanner />
 
         <div className="container">
-          <Timer />
           <UserList model={this.state.joinedUsers} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
