@@ -8,11 +8,17 @@ import View from './View';
 class HeroContainer extends Component {
   constructor(props) {
     super(props);
+
     this.facebookLogin = this.facebookLogin.bind(this);
+    this.joinNextSession = this.joinNextSession.bind(this);
   }
 
   facebookLogin() {
     console.log('facebookLogin');
+  }
+
+  joinNextSession() {
+    console.log('joinNextSession');
   }
 
   render() {
@@ -26,7 +32,9 @@ class HeroContainer extends Component {
     }
 
     return (
-      <View showTimer={showTimer} user={user} today={today} />
+      <View showTimer={showTimer} user={user} today={today}
+        joinNextSession={this.joinNextSession}
+      />
     )
   }
 }

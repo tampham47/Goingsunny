@@ -1,3 +1,4 @@
+import T from 'prop-types';
 import React, { Component } from 'react';
 
 import CountDown from 'components/CountDown';
@@ -7,7 +8,7 @@ import styles from './styles.css';
 
 
 const HeroView = (props) => {
-  const { showTimer, user, today } = props;
+  const { showTimer, user, today, joinNextSession } = props;
 
   return (
     <section className={styles.main}>
@@ -31,7 +32,9 @@ const HeroView = (props) => {
         </div>
 
         {user._id ? (
-          <button className={`button-primary ${styles.button}`}>
+          <button className={`button-primary ${styles.button}`}
+            onClick={joinNextSession}
+          >
             Join next session
           </button>
         ) : (
@@ -48,5 +51,8 @@ const HeroView = (props) => {
   );
 };
 
+HeroView.propTypes = {
+  joinNextSession: T.func.isRequired,
+}
 
 export default HeroView;
