@@ -24,10 +24,10 @@
   height: 7em;
   list-style-type: none;
   border-radius: 5px;
-  border: 1px solid #e3eaef;
+  border: 1px solid var(--color5);
 }
 
 .item:hover {
   cursor: pointer;
-  border: 2px solid #e3eaef;
+  border: 1px solid var(--color6);
 }

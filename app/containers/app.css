@@ -4,6 +4,9 @@
   --color2: #3A4750;
   --color3: #303841;
   --color4: #BE3144;
+  --color5: #E3EAEF;
+  --color6: #AAAFB2;
+  --color7: #E1E8ED;
 
   --header: 46px;
   --baseline: 12px;
@@ -15,7 +18,7 @@ html {
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
+
   font-size: 1.6rem;
   margin: 0;
 }
