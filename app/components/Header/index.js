@@ -83,9 +83,13 @@ class Intro extends Component {
               <Facebook callback={this.responseFacebook} textButton={fbText} />
             )}
           </div>
-          <div className={styles.right}>How it works?</div>
+          <div className={styles.right}>
+            <Link to="/how-it-works" className={styles.link}>How it works?</Link>
+          </div>
           <div className={styles.center}>
-            <div className={this.getAnimatedClass('tada')}>GOING SUNNY</div>
+            <div className={this.getAnimatedClass('tada')}>
+              <Link to="/" className={styles.link}>GOING SUNNY</Link>
+            </div>
           </div>
         </div>
       </header>
