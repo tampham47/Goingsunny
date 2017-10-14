@@ -41,8 +41,7 @@ const HeroView = (props) => {
         )}
 
         <div className={styles.quote}>
-          <p>You don't have to be great to start</p>
-          <p>but you have to start to be great!</p>
+          <p>The club starts 8PM - 10PM every day!</p>
         </div>
       </div>
     </section>

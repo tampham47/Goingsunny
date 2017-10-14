@@ -31,7 +31,7 @@ button.button {
   background-color: var(--color4);
   color: var(--light);
   border: var(--color4);
-  padding: 6px 36px;
+  padding: 6px 48px;
   height: auto;
   font-size: 1.5rem;
 }
@@ -48,9 +48,10 @@ button.button:focus {
   margin-bottom: 1.5rem;
 }
 .timer {
-  width: 200px;
+  width: 320px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 3rem;
 }
 
 .quote {
