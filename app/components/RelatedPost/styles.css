@@ -17,17 +17,17 @@
   content: '';
   width: 32.5%;
 }
-  
+
 .item {
   display: block;
   width: 32.5%;
   height: 7em;
   list-style-type: none;
   border-radius: 5px;
-  border: 1px solid #e3eaef;
+  border: 1px solid var(--color5);
 }
 
 .item:hover {
-  opacity: 0.5;
-  cursor: hand;
+  cursor: pointer;
+  border: 1px solid var(--color6);
 }
