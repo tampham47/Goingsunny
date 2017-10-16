@@ -14,7 +14,7 @@ class RelatedPost extends Component {
     const { model } = this.props;
     return (
       <section className={styles.main}>
-        <Header title="Documents" />
+        <Header title="Tài liệu" />
         <ul className={styles.content}>
           {model.map((item) => {
             const Elm = item.type === 'pdf' ? Pdf : item.type === 'youtube' ? Youtube : Link;

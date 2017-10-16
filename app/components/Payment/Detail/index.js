@@ -12,8 +12,8 @@ const PaymentInfo = () => (
         Phone: +84 164-365-2922
       </div>
       <div className={styles.note}>
-        <p>Sự ủng hộ của bạn là niềm động lực, là niềm vinh hạnh rất lớn để chúng mình tiến nhanh về phía trước. Cảm ơn các bạn rất nhiều!</p>
-        <i>Bạn mở App Momo rồi quét mã QR bên cạnh nhé.</i>
+        <p>Sự ủng hộ của bạn là niềm động lực, là niềm vinh hạnh rất lớn để chúng mình tiến về phía trước.</p>
+        <i>Mở App Momo và quét mã QR bên cạnh nhé.</i>
       </div>
     </div>
   </div>

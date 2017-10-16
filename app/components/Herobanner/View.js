@@ -24,9 +24,8 @@ const HeroView = (props) => {
             </div>
           ) : (
             <p>
-              Are you ready, the party time is started, you are not too late.<br/>
-              Just click on below button and wait maximun to 2 mins.<br/>
-              The system will lead you to another one to talk.
+              Hãy nhấn vào nút bên dưới<br/>
+              Để có cơ hội gặp gỡ bạn mới mỗi 5 phút.
             </p>
           )}
         </div>
@@ -35,16 +34,16 @@ const HeroView = (props) => {
           <button className={`button-primary ${styles.button}`}
             onClick={joinNextSession}
           >
-            Join next session
+            Tham gia nói chuyện
           </button>
         ) : (
           <button className={`button-primary ${styles.button}`}>
-            Login via Facebook
+            Đăng nhập bằng Facebook
           </button>
         )}
 
         <div className={styles.quote}>
-          <p>The club starts 8PM - 10PM every day!</p>
+          <p>Goingsunny hoạt động từ 20h - 22h hằng ngày.</p>
         </div>
       </div>
     </section>
