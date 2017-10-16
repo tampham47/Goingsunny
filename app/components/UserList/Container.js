@@ -40,6 +40,7 @@ class UserList extends Component {
       isMatched: true,
       room: data.room,
       user2: data.matched,
+      joinedList: [],
     });
   }
 
@@ -51,7 +52,6 @@ class UserList extends Component {
     // this will fired when people join the class
     window.addEventListener('SYSTEM_CLASS_DATA', this.userEntered);
     const user = this.state.user;
-    console.log('Subscribe', user._id);
     if (user._id) {
       window.addEventListener(`SYSTEM_${user._id}`, this.matched);
     }
@@ -69,11 +69,11 @@ class UserList extends Component {
     if (this.props.model !== next.model) {
       this.setState({ joinedList: next.model });
     }
+
     if (this.props.user !== next.user) {
       const user = next.user;
       this.setState({ user });
       if (user._id) {
-        console.log('Subscribe', user._id);
         window.addEventListener(`SYSTEM_${user._id}`, this.matched);
       }
     }
@@ -82,7 +82,8 @@ class UserList extends Component {
   render() {
     return (
       <section className={styles.main}>
-        <Header title="Friends are waiting for you" />
+        <Header title="Bạn bè tham gia" />
+
         <div className={styles.userList}>
           {this.state.joinedList.map(function(item, index) {
             return (
@@ -91,6 +92,9 @@ class UserList extends Component {
               </div>
             )
           })}
+          {!this.state.joinedList.length && (
+            <p>Chưa có ai, hãy là người đầu tiên tham gia!</p>
+          )}
         </div>
 
         {this.state.isMatched && (

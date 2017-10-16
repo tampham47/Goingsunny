@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mqtt from 'middleware/mqtt';
 import moment from 'moment';
 
 import View from './View';
@@ -8,11 +9,25 @@ import View from './View';
 class HeroContainer extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isJoined: false,
+    };
+
     this.facebookLogin = this.facebookLogin.bind(this);
+    this.joinNextSession = this.joinNextSession.bind(this);
   }
 
-  facebookLogin() {
-    console.log('facebookLogin');
+  componentDidMount() {}
+  facebookLogin() {}
+
+  joinNextSession() {
+    const payload = {
+      user: this.props.user,
+      session: moment().format('YYYYMMDD'),
+    }
+
+    mqtt.publish('join-class', JSON.stringify(payload));
   }
 
   render() {
@@ -26,7 +41,10 @@ class HeroContainer extends Component {
     }
 
     return (
-      <View showTimer={showTimer} user={user} today={today} />
+      <View
+        showTimer={showTimer} user={user} today={today}
+        joinNextSession={this.joinNextSession}
+      />
     )
   }
 }

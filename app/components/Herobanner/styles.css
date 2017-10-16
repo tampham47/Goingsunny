@@ -36,11 +36,13 @@ button.button {
   font-size: 1.5rem;
 }
 button.button:hover,
-button.button:active,
 button.button:focus {
   background-color: var(--color4);
   color: var(--light);
   border: var(--color4);
+}
+button.button:active {
+  transform: translate(0, 2px);
 }
 
 

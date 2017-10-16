@@ -13,7 +13,7 @@ const MatchedGroup = (props) => {
   return (
     <div className={styles.main}>
       <h5 className={styles.message}>
-        Let have a great talk with your friend!
+        Be nice, stay in conversation at least 15 minutes!
       </h5>
       <div className={styles.list}>
         <UserInfo model={user1} />
