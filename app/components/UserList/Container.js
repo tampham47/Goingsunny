@@ -92,6 +92,9 @@ class UserList extends Component {
               </div>
             )
           })}
+          {!this.state.joinedList.length && (
+            <p>Chưa có ai, hãy là người đầu tiên tham gia!</p>
+          )}
         </div>
 
         {this.state.isMatched && (

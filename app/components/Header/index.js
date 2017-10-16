@@ -54,7 +54,7 @@ class Intro extends Component {
       };
 
       mqtt.subscribe(`SYSTEM_${body._id}`);
-      mqtt.publish('join-class', JSON.stringify(payload));
+      // mqtt.publish('join-class', JSON.stringify(payload));
 
       this.setState({
         busy: false,
