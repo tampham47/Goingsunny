@@ -31,4 +31,3 @@ class RelatedPost extends Component {
 }
 
 export default RelatedPost;
-
