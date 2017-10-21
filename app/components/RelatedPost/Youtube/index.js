@@ -4,7 +4,8 @@ import Modal from 'core/Modal';
 
 import Detail from './Detail';
 
-import background from '../../../assets/mstile-310x310.png';
+import config  from 'config';
+
 import iconYoutube from './ico-youtube.svg';
 import styles from './styles.css';
 
@@ -19,6 +20,7 @@ class YoutubeDocument extends Component {
 
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleDissmiss = this.handleDissmiss.bind(this);
+    this.getImage = this.getImage.bind(this);
   }
 
   handleOnClick() {
@@ -31,12 +33,19 @@ class YoutubeDocument extends Component {
     this.setState({ isShowDetail: false });
   }
 
+  getImage(item) {
+    if(item.cover) {
+      return `${config.API_IMAGE_URL}/${item.cover.filename}`;
+    }
+    return require('../default.jpg');
+  }
+
   render() {
     const { item } = this.props;
     return (
       <div className={styles.main} onClick={this.handleOnClick}>
         <div className={styles.header}>
-          <img className={styles.background} src={background} />
+          <img className={styles.background} src={this.getImage(item)} />
           <img className={styles.icon} src={iconYoutube} />
         </div>
         <div className={styles.title}>
