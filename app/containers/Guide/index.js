@@ -21,8 +21,6 @@ class Main extends Component {
     return (
       <section className={styles.main}>
         <div className="container">
-          <h3 className={styles.title}>Hướng dẫn sử dụng Goingsunny</h3>
-
           <div className={styles.section}>
             <h6 className={styles.step}>1. Đăng nhập thông qua facebook</h6>
             <p className={styles.content}>
@@ -34,13 +32,13 @@ class Main extends Component {
           <div className={styles.section}>
             <h6 className={styles.step}>2. Tham gia nói chuyện</h6>
             <p className={styles.content}>
-              Going sunny sẽ bắt đầu kết nối 2 người vào 1 nhóm từ 8PM - 10PM mỗi ngày.
+              Going sunny sẽ bắt đầu kết nối 2 người vào 1 nhóm từ <strong>8PM - 10PM mỗi ngày</strong>.
             </p>
             <p className={styles.content}>
               Để tham gia nói chuyện trực tuyến hãy nhấn vào nút <strong>Tham Gia Nói Chuyện</strong> bên dưới.
             </p>
             <p className={styles.content}>
-              Hãy thân thiện, bằng cách duy trì cuộc nói chuyện ít nhất 15 phút, sau đó bạn có thể trở lại going sunny và nhấp vào nút `Tham gia nói chuyện` một lần nữa.
+              Hãy thân thiện, bằng cách duy trì cuộc nói chuyện <strong>ít nhất 15 phút</strong>, sau đó bạn có thể trở lại going sunny và nhấp vào nút <strong>Tham gia nói chuyện</strong> một lần nữa.
               Sau mỗi 5 phút, hệ thống sẽ lại kết nối bạn với 1 người khác, và cứ như vậy…
             </p>
             <img src={join} alt="join"/>
