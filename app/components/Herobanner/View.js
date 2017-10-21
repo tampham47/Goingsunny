@@ -37,9 +37,7 @@ const HeroView = (props) => {
             Tham gia nói chuyện
           </button>
         ) : (
-          <button className={`button-primary ${styles.button}`}>
-            Đăng nhập bằng Facebook
-          </button>
+          <p>Hãy đăng nhập để bắt đầu!</p>
         )}
 
         <div className={styles.quote}>
