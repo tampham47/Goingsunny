@@ -9,6 +9,7 @@ import Payment from 'components/Payment';
 import Herobanner from 'components/Herobanner';
 import UserList from 'components/UserList';
 import RelatedPost from 'components/RelatedPost';
+import DailyTopic from 'components/DailyTopic';
 
 import styles from './styles.css';
 
@@ -29,6 +30,22 @@ const getRelatedPost = () => {
   return request('/pinedPost?query={"state": "public"}', { method: 'GET' });
 }
 
+const getDailyTopic = () => {
+  const host = 'https://www.googleapis.com/youtube/v3';
+  const apiKey = 'AIzaSyAOtyQmI2QxvuldfAc2e41sbVr0jh312NE';
+
+  const part = 'snippet';
+  const query = 'tieng+anh';
+  const type = 'video';
+  const uri = `/search?part=${part}&q=${query}&type=${type}&key=${apiKey}`;
+
+  const url = `${host}${uri}`;
+  const params =  { method: 'GET' };
+
+  return fetch(url, params).then(res => {
+    return res.json();
+  })
+}
 
 class Home extends Component {
   constructor(props) {
@@ -36,7 +53,8 @@ class Home extends Component {
     this.state = {
       busy: false,
       joinedUsers: [],
-      relatedPost: []
+      relatedPost: [],
+      dailyTopic: [],
     }
   }
 
@@ -44,11 +62,13 @@ class Home extends Component {
     Promise.all([
       getSession(),
       getRelatedPost(),
+      getDailyTopic(),
     ])
     .then(res => {
       this.setState({
         joinedUsers: res[0],
         relatedPost: res[1],
+        dailyTopic: res[2],
       });
     })
     .catch(err => {
@@ -64,6 +84,7 @@ class Home extends Component {
 
         <div className="container">
           <UserList model={this.state.joinedUsers} />
+          <DailyTopic model={this.state.dailyTopic.items} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
         </div>

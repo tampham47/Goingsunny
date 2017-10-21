@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+.header {
+  display: block;
+  height: 140px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  transform: translate(0%, -50%);
+  top: 50%;
+  position: absolute;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  bottom: 5px;
+  position: absolute;
+}
+
+.title {
+  padding: 10px;
+  color: black;
+  font-weight: 500;
+}
