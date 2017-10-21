@@ -9,7 +9,7 @@
     "build": "rimraf dist/ && yarn run webpack && gulp build",
 
     "login": "ssh -i _deploy/goingsunny-oregon.pem centos@35.162.241.129",
-    "deploy": "yarn run login 'cd prod/goingsunny2.0 && git reset --hard && git pull && yarn install && pm2 startOrRestart pm2.json --env production'",
+    "deploy": "yarn run login 'cd prod/goingsunny2.0 && git pull && yarn run build && pm2 startOrRestart pm2.json --env production'",
 
     "test:prebuild": "./bin/test-prebuild",
     "test:watch": "yarn run test:prebuild; yarn run test:babelwatch",
