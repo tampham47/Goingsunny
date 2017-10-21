@@ -1,12 +1,17 @@
 import React from 'react';
 
+import Placeholder from 'core/Placeholder';
 import styles from './styles.css';
+
 
 const Detail = ({ isShow, item }) => {
   if (!isShow) { return null; }
 
   return (
-    <iframe className={styles.main} src={item.url}/>
+    <div className={styles.main}>
+      <Placeholder />
+      <iframe className={styles.frame} src={item.url}/>
+    </div>
   );
 }
 

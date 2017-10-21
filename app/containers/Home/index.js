@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import moment from 'moment';
 import Helmet from 'react-helmet';
+import request from 'middleware/request';
 
 import Payment from 'components/Payment';
 import Herobanner from 'components/Herobanner';
@@ -11,33 +12,25 @@ import RelatedPost from 'components/RelatedPost';
 
 import styles from './styles.css';
 
+// TODO: some functions like the 2 below are called business
+// it would like to move to business folder then
+const getSession = () => {
+  const sessionName = moment().format('YYYYMMDD');
+  const query = JSON.stringify({
+    sessionName,
+    roomName: '',
+  });
+  return request(`/session?populate=_user&query=${query}`, { method: 'GET' })
+  .then(models => {
+    return models.map(i => i._user);
+  });
+}
+const getRelatedPost = () => {
+  return request('/pinedPost?query={"state": "public"}', { method: 'GET' });
+}
+
 
 class Home extends Component {
-
-  static initial() {
-    const sessionName = moment().format('YYYYMMDD');
-    const url = 'https://api.goingsunny.com/api/v1';
-    const query = JSON.stringify({
-      sessionName,
-      roomName: '',
-    });
-    return fetch(`${url}/session?populate=_user&query=${query}`, {
-      method: 'GET'
-    })
-    .then(response => { return response.json(); })
-    .then(models => {
-      return models.map(i => i._user);
-    });
-  }
-
-  static getRelatedPost() {
-    const url = 'https://api.goingsunny.com/api/v1';
-    return fetch(`${url}/pinedPost?query={"state": "public"}`, {
-      method: 'GET'
-    })
-    .then(response => { return response.json(); });
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -48,15 +41,15 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    Home.initial().then(body => {
-      this.setState({ joinedUsers: body });
-    })
-    .catch(err => {
-      this.setState({ err });
-    });
-
-    Home.getRelatedPost().then(body => {
-      this.setState({ relatedPost: body });
+    Promise.all([
+      getSession(),
+      getRelatedPost(),
+    ])
+    .then(res => {
+      this.setState({
+        joinedUsers: res[0],
+        relatedPost: res[1],
+      });
     })
     .catch(err => {
       this.setState({ err });
@@ -67,7 +60,6 @@ class Home extends Component {
     return (
       <div className={styles.main}>
         <Helmet title="An online English club - Goingsunny" />
-
         <Herobanner />
 
         <div className="container">

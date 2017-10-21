@@ -54,7 +54,7 @@ class Intro extends Component {
       };
 
       mqtt.subscribe(`SYSTEM_${body._id}`);
-      mqtt.publish('join-class', JSON.stringify(payload));
+      // mqtt.publish('join-class', JSON.stringify(payload));
 
       this.setState({
         busy: false,
@@ -84,7 +84,7 @@ class Intro extends Component {
             )}
           </div>
           <div className={styles.right}>
-            <Link to="/how-it-works" className={styles.link}>How it works?</Link>
+            <Link to="/how-it-works" className={styles.link}>Hướng dẫn?</Link>
           </div>
           <div className={styles.center}>
             <div className={this.getAnimatedClass('tada')}>
