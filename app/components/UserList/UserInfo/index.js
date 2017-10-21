@@ -11,7 +11,7 @@ const UserInfo = (props) => {
   return (
     <span className={styles.main}>
       <span className={styles.avatar}>
-        <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
+        <img src={`https://avatars.io/facebook/${user.providerId}`} alt=''/>
       </span>
       <span className={styles.content}>
         <span>{user.displayName || 'User Name'}</span>
