@@ -9,7 +9,7 @@ const getImage = (item) => {
   if(item.cover) {
     return `${config.API_IMAGE_URL}/${item.cover.filename}`;
   }
-  return require('../default.jpg');
+  return require('../default.png');
 }
 
 const LinkDocument = ({ item }) => {

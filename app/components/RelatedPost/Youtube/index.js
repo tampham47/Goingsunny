@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
+import config  from 'config';
 import Modal from 'core/Modal';
 
 import Detail from './Detail';
-
-import config  from 'config';
-
 import iconYoutube from './ico-youtube.svg';
 import styles from './styles.css';
 
@@ -37,7 +35,7 @@ class YoutubeDocument extends Component {
     if(item.cover) {
       return `${config.API_IMAGE_URL}/${item.cover.filename}`;
     }
-    return require('../default.jpg');
+    return require('../default.png');
   }
 
   render() {
