@@ -1,64 +1,35 @@
 .main {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   height: 100%;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
 }
 
-.wrapIcon {
-  display: flex;
-  width: 30%;
-  height: 100%;
-  margin-right: 5%;
-  align-items: center;
-  justify-content: center;
-  background: var(--color7);
-  border-radius: 4px 0 0 4px;
+.header {
+  display: block;
+  height: 140px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  transform: translate(0%, -50%);
+  top: 50%;
+  position: absolute;
 }
 
 .icon {
-  width: 40%;
-  height: 40%;
-}
-
-.wrapContent {
-  display: flex;
-  flex-direction: column;
-  width: 65%;
-  height: 80%;
-  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  bottom: 5px;
+  position: absolute;
 }
 
 .title {
-  width: 100%;
-  height: auto;
-  font-size: 1.5rem;
+  padding: 10px;
+  color: black;
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: black;
 }
-
-.description {
-  width: 100%;
-  height: auto;
-  font-size: 1.3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: black;
-}
-
-.link {
-  width: 100%;
-  height: auto;
-  font-size: 1.3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: black;
-}
-

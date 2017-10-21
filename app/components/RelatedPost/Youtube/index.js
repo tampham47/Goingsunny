@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import config  from 'config';
 import Modal from 'core/Modal';
 
 import Detail from './Detail';
@@ -17,6 +18,7 @@ class YoutubeDocument extends Component {
 
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleDissmiss = this.handleDissmiss.bind(this);
+    this.getImage = this.getImage.bind(this);
   }
 
   handleOnClick() {
@@ -29,26 +31,24 @@ class YoutubeDocument extends Component {
     this.setState({ isShowDetail: false });
   }
 
+  getImage(item) {
+    if(item.cover) {
+      return `${config.API_IMAGE_URL}/${item.cover.filename}`;
+    }
+    return require('../default.png');
+  }
+
   render() {
     const { item } = this.props;
     return (
       <div className={styles.main} onClick={this.handleOnClick}>
-        <div className={styles.wrapIcon}>
+        <div className={styles.header}>
+          <img className={styles.background} src={this.getImage(item)} />
           <img className={styles.icon} src={iconYoutube} />
         </div>
-
-        <div className={styles.wrapContent}>
-          <div className={styles.title}>
-            {item.title}
-          </div>
-          <div className={styles.description}>
-            {item.description}
-          </div>
-          <div className={styles.link}>
-            {item.url}
-          </div>
+        <div className={styles.title}>
+          {item.title}
         </div>
-
         <Modal isShow={this.state.isShowDetail} dismiss={this.handleDissmiss}>
           <Detail isShow={this.state.isShowDetail} item={item}/>
         </Modal>
@@ -58,4 +58,3 @@ class YoutubeDocument extends Component {
 }
 
 export default YoutubeDocument;
-
