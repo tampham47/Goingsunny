@@ -12,7 +12,7 @@ class User extends Component {
     return (
       <span className={styles.main}>
         <span className={styles.avatar}>
-          <img src={`https://avatars.io/facebook/${user.username}`} alt=''/>
+          <img src={`https://avatars.io/facebook/${user.providerId}`} alt=''/>
         </span>
         <span className={styles.name}>{user.displayName}</span>
       </span>
