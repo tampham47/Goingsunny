@@ -44,8 +44,11 @@ class App extends Component {
           titleTemplate="%s - Goingsunny"
           meta={[{
             "name": "description",
-            "content": "The biggest online English club in Vietnam!!!"
-          },]}
+            "content": "An online English club in Vietnam!!!"
+          }, {
+            "name": "og:image",
+            "content": "/assets/english-time.jpg"
+          }]}
           htmlAttributes={{"lang": "en"}}
         />
         <Header />

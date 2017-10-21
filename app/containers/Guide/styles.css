@@ -27,3 +27,7 @@
   margin-bottom: 8px;
   font-weight: 400;
 }
+
+.link {
+  text-decoration: none;
+}

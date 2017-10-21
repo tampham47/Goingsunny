@@ -69,6 +69,14 @@ class Main extends Component {
             </p>
             <img src={appearin} alt="appearin"/>
           </div>
+
+          <div className={styles.section}>
+            <p className={styles.content}>
+              Hãy giúp Goingsunny đông vui hơn, đồng thời để bạn có nhiều cơ hội nói chuyện với bạn mới hơn, bằng cách share thông qua facebook. <a className={styles.link} href="https://www.facebook.com/sharer/sharer.php?u=https://goingsunny.com/how-it-works" target="_blank">
+              Share via Facebook
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     )
