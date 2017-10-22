@@ -21,6 +21,9 @@ class Main extends Component {
     return (
       <section className={styles.main}>
         <div className="container">
+          <h3 className={styles.title}>
+            Goingsunny là một câu lạc bộ tiếng anh hoạt động trực tuyến, nơi mà mỗi người có thể truy cập từ 8PM đến 10PM để thả ga chém gió về các chủ để tiếng anh với bạn mới của mình. Vậy Goingsunny hoạt động thế nào?
+          </h3>
           <div className={styles.section}>
             <h6 className={styles.step}>1. Đăng nhập thông qua facebook</h6>
             <p className={styles.content}>
