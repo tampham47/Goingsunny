@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import config  from 'config';
 import Modal from 'core/Modal';
 
-import Detail from './Detail';
+import Slide from './Slide';
+
 import iconYoutube from './ico-youtube.svg';
 import styles from './styles.css';
 
@@ -13,38 +14,36 @@ class Video extends Component {
     super(props);
 
     this.state = {
-      isShowDetail: false
+      isShowSlice: false
     };
 
     this.handleOnClick = this.handleOnClick.bind(this);
-    this.handleDissmiss = this.handleDissmiss.bind(this);
+    this.handleDismiss = this.handleDismiss.bind(this);
   }
 
   handleOnClick() {
-    this.setState({
-      isShowDetail: !this.state.isShowDetail,
-    });
+    this.setState({ isShowSlice: true });
   }
 
-  handleDissmiss() {
-    this.setState({ isShowDetail: false });
+  handleDismiss() {
+    this.setState({ isShowSlice: false });
   }
 
   render() {
-    const { item } = this.props;
+    const { item, index, model } = this.props;
     const { title, thumbnails } = item.snippet;
     const urlImage = thumbnails.high.url;
     return (
-      <div className={styles.main} onClick={this.handleOnClick}>
-        <div className={styles.header}>
+      <div className={styles.main}>
+        <div className={styles.header} onClick={this.handleOnClick}>
           <img className={styles.background} src={urlImage} />
           <img className={styles.icon} src={iconYoutube} />
         </div>
-        <div className={styles.title}>
+        <div className={styles.title} onClick={this.handleOnClick}>
           {title}
         </div>
-        <Modal isShow={this.state.isShowDetail} dismiss={this.handleDissmiss}>
-          <Detail isShow={this.state.isShowDetail} item={item}/>
+        <Modal isShow={this.state.isShowSlice} dismiss={this.handleDismiss}>
+          <Slide isShow={this.state.isShowSlice} index={index} model={model}/>
         </Modal>
       </div>
   );

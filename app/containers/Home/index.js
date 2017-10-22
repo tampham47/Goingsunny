@@ -37,7 +37,8 @@ const getDailyTopic = () => {
   const part = 'snippet';
   const query = 'tieng+anh';
   const type = 'video';
-  const uri = `/search?part=${part}&q=${query}&type=${type}&key=${apiKey}`;
+  const maxResults = '6';
+  const uri = `/search?part=${part}&q=${query}&type=${type}&maxResults=${maxResults}&key=${apiKey}`;
 
   const url = `${host}${uri}`;
   const params =  { method: 'GET' };
@@ -68,7 +69,7 @@ class Home extends Component {
       this.setState({
         joinedUsers: res[0],
         relatedPost: res[1],
-        dailyTopic: res[2],
+        dailyTopic: res[2].items,
       });
     })
     .catch(err => {
@@ -84,7 +85,7 @@ class Home extends Component {
 
         <div className="container">
           <UserList model={this.state.joinedUsers} />
-          <DailyTopic model={this.state.dailyTopic.items} />
+          <DailyTopic model={this.state.dailyTopic} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
         </div>
