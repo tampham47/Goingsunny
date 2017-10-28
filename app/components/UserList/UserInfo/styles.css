@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  position: relative;
 }
 
 .avatar {
@@ -13,8 +14,16 @@
   background-color: whitesmoke;
 }
 
-.avatar img {
+.avatarImage {
   width: 100%;
+}
+
+.avatarIcon {
+  width: 15px;
+  height: 15px;
+  left: 35px;
+  top: 0px;
+  position: absolute;
 }
 
 .content {

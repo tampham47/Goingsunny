@@ -5,6 +5,7 @@
   margin-right: -1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  position: relative;
 }
 .main:hover {
   background-color: var(--color2);
@@ -21,6 +22,14 @@
   margin-right: 4px;
 }
 
-.avatar img {
+.avatarImage {
   width: 100%;
+}
+
+.avatarIcon {
+  width: 12px;
+  height: 12px;
+  left: 30px;
+  top: 2px;
+  position: absolute;
 }
