@@ -14,7 +14,8 @@ const UserInfo = (props) => {
       <span className={styles.avatar}>
         <img
           className={styles.avatarImage}
-          src={`https://avatars.io/facebook/${user.providerId}`} alt=''
+          src={`https://avatars.io/facebook/${user.providerId}`}
+          alt=''
         />
         {user.isMentor ? <img className={styles.avatarIcon} src={iconCrown} alt=''/> : null }
       </span>

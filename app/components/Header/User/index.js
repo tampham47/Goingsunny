@@ -11,13 +11,15 @@ class User extends Component {
   render() {
     const user = this.props.model;
 
-    console.log('isMentor', user.isMentor);
-
     return (
       <span className={styles.main}>
         <span className={styles.avatar}>
-          <img className={styles.avatarImage} src={`https://avatars.io/facebook/${user.providerId}`} alt=''/>
-          {user.isMentor ? null: <img className={styles.avatarIcon} src={iconCrown} alt=''/> }
+          <img
+            className={styles.avatarImage}
+            src={`https://avatars.io/facebook/${user.providerId}`}
+            alt=''
+          />
+          {user.isMentor ? <img className={styles.avatarIcon} src={iconCrown} alt=''/> : null }
         </span>
         <span className={styles.name}>{user.displayName}</span>
       </span>
