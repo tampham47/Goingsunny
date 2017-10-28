@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 
-import iconCrown from './ico-crown.svg';
-
+import iconCrown from './royal.svg';
 import styles from './styles.css';
 
 
