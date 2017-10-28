@@ -4,11 +4,11 @@ import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 
 import styles from './styles.css';
-import facebook from './imgs/Facebook.png';
-import appearin from './imgs/Appearin.png';
-import friends from './imgs/Friend.png';
-import join from './imgs/Join.png';
-import match from './imgs/Match.png';
+import facebook from './imgs/Facebook.jpg';
+import appearin from './imgs/Appearin.jpg';
+import friends from './imgs/Friend.jpg';
+import join from './imgs/Join.jpg';
+import match from './imgs/Match.jpg';
 
 
 class Main extends Component {

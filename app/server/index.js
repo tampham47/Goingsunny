@@ -9,5 +9,6 @@ require.extensions['.scss'] = () => { return; };
 require.extensions['.css'] = () => { return; };
 require.extensions['.svg'] = () => { return; };
 require.extensions['.png'] = () => { return; };
+require.extensions['.jpg'] = () => { return; };
 
 require('./server.js')
