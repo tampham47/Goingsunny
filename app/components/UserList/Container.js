@@ -83,6 +83,7 @@ class UserList extends Component {
     return (
       <section className={styles.main}>
         <Header title="Bạn bè tham gia" />
+
         <div className={styles.userList}>
           {this.state.joinedList.map(function(item, index) {
             return (
