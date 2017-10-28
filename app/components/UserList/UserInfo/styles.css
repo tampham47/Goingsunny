@@ -13,8 +13,17 @@
   background-color: whitesmoke;
 }
 
-.avatar img {
+.avatarImage {
   width: 100%;
+  position: relative;
+}
+
+.avatarIcon {
+  width: 20px;
+  height: 20px;
+  left: 34px;
+  top: 36px;
+  position: absolute;
 }
 
 .content {

@@ -21,6 +21,15 @@
   margin-right: 4px;
 }
 
-.avatar img {
+.avatarImage {
   width: 100%;
+  position: relative;
+}
+
+.avatarIcon {
+  width: 12px;
+  height: 12px;
+  left: 20px;
+  top: 2px;
+  position: absolute;
 }
