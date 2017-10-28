@@ -9,6 +9,7 @@ import styles from './styles.css';
 
 const UserInfo = (props) => {
   const user = props.model || {};
+
   return (
     <span className={styles.main}>
       <span className={styles.avatar}>

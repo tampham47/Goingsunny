@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  position: relative;
 }
 
 .avatar {
@@ -15,14 +16,13 @@
 
 .avatarImage {
   width: 100%;
-  position: relative;
 }
 
 .avatarIcon {
   width: 20px;
   height: 20px;
   left: 34px;
-  top: 36px;
+  top: 0px;
   position: absolute;
 }
 
