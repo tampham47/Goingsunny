@@ -30,12 +30,17 @@ const getRelatedPost = () => {
   return request('/pinedPost?query={"state": "public"}', { method: 'GET' });
 }
 
-const getDailyTopic = () => {
+const getNameOfDailyTopic = () => {
+  const date = moment().format('YYYYMMDD');
+  return request(`/lesson?query=%7B"availableDateStr":${date}%7D&distinct=name`, { method: 'GET' });
+}
+
+const getVideoDailyTopic = (nameOfDailyTopic) => {
   const host = 'https://www.googleapis.com/youtube/v3';
   const apiKey = 'AIzaSyAOtyQmI2QxvuldfAc2e41sbVr0jh312NE';
 
   const part = 'snippet';
-  const query = 'tieng+anh';
+  const query = nameOfDailyTopic;
   const type = 'video';
   const maxResults = '6';
   const uri = `/search?part=${part}&q=${query}&type=${type}&maxResults=${maxResults}&key=${apiKey}`;
@@ -55,7 +60,8 @@ class Home extends Component {
       busy: false,
       joinedUsers: [],
       relatedPost: [],
-      dailyTopic: [],
+      nameOfDailyTopic: [],
+      videoDailyTopic: [],
     }
   }
 
@@ -63,13 +69,15 @@ class Home extends Component {
     Promise.all([
       getSession(),
       getRelatedPost(),
-      getDailyTopic(),
+      getNameOfDailyTopic(),
+      getVideoDailyTopic(this.state.nameOfDailyTopic[0]),
     ])
     .then(res => {
       this.setState({
         joinedUsers: res[0],
         relatedPost: res[1],
-        dailyTopic: res[2].items,
+        nameOfDailyTopic: res[2],
+        videoDailyTopic: res[3].items,
       });
     })
     .catch(err => {
@@ -85,7 +93,7 @@ class Home extends Component {
 
         <div className="container">
           <UserList model={this.state.joinedUsers} />
-          <DailyTopic model={this.state.dailyTopic} />
+          <DailyTopic model={this.state.videoDailyTopic} />
           <RelatedPost model={this.state.relatedPost} />
           <Payment />
         </div>
